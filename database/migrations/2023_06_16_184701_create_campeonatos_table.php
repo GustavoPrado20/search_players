@@ -13,7 +13,24 @@ return new class extends Migration
     {
         Schema::create('campeonatos', function (Blueprint $table) {
             $table->id();
+            $table->string('nome');
+            $table->string('cep', 10)->nullable();
+            $table->string('estado', 2)->nullable();
+            $table->string('cidade', 80)->nullable();
+            $table->unsignedBigInteger('id_organisador');
+            $table->string('premiacao');
+            $table->decimal('taxa_inscricao', 10, 2);
+            $table->string('nome_organizador');
+            $table->integer('numero_times');
+            $table->date('data_inicio');
+            $table->date('data_fim');
+            $table->integer('tipo');
+            $table->integer('esporte');
+            $table->string('logo_campeonato');
             $table->timestamps();
+
+            //Foreign keys
+            $table->foreign('id_organisador')->references(id)->on('users');
         });
     }
 

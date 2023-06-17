@@ -13,7 +13,19 @@ return new class extends Migration
     {
         Schema::create('contratos', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('id_jogador');
+            $table->unsignedBigInteger('id_contratante');
+            $table->unsignedBigInteger('id_time');
+            $table->decimal('preco', 10, 2);
+            $table->string('status_contrato');
+            $table->integer('tipo_contrato');
+            $table->string('posicao')->nullable();
             $table->timestamps();
+
+            //foreign keys
+            $table->foreign('id_jogador')->references('id')->on('users');
+            $table->foreign('id_contratante')->references('id')->on('users');
+            $table->foreign('id_time')->references('id')->on('times');
         });
     }
 

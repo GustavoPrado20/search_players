@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('feedbck_saidas', function (Blueprint $table) {
             $table->id();
+            $table->unsinedBigInteger('id_usuario');
+            $table->string('nome');
+            $table->string('email');
+            $table->string('opiniao');
             $table->timestamps();
+
+            //foreign keys
+            $table->foreign('id_usuario')->references('id')->on('users');
         });
     }
 

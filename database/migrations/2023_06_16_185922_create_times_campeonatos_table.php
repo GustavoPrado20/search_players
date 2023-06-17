@@ -12,8 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('times_campeonatos', function (Blueprint $table) {
-            $table->id();
+            $table->unsignedBigInteger('id_campeonato');
+            $table->unsignedBigInteger('id_time');
+            $table->integer('colocacao')->nullable();
+            $table->integer('pontos')->nullable();
+            $table->integer('status')->nullable();
             $table->timestamps();
+
+            //foreign keys
+            $table->foreign('id_campeonato')->references('id')->on('campeonatos');
+            $table->foreign('id_time')->references('id')->on('times');
         });
     }
 

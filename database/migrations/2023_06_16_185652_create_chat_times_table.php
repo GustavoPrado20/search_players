@@ -13,7 +13,15 @@ return new class extends Migration
     {
         Schema::create('chat_times', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->unsignedBigInteger('id_time');
+            $table->unsignedBigInteger('id_usuario');
+            $table->string('nome');
+            $table->string('mensagem');
+            $table->timestamps('data_hora')->useCurrent();
+
+            //foreign keys
+            $table->foreign('id_time')->references('id')->on('times');
+            $table->foreign('id_usuario')->references('id')->on('users');
         });
     }
 
