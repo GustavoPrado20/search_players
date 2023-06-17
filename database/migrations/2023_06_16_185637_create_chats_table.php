@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('chats', function (Blueprint $table) {
             $table->id();
             $table->string('mensagem');
-            $table->timestamps('data_hora')->useCurrent();
+            $table->timestamps();
             $table->string('registro_conversa');
             $table->string('link')->nullable();
         });

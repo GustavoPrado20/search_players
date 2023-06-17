@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_usuario');
             $table->string('nome');
             $table->string('mensagem');
-            $table->timestamps('data_hora')->useCurrent();
+            $table->timestamps();
 
             //foreign keys
             $table->foreign('id_time')->references('id')->on('times');
