@@ -30,7 +30,7 @@ return new class extends Migration
             $table->timestamps();
 
             //Foreign keys
-            $table->foreign('id_organisador')->references(id)->on('users');
+            $table->foreign('id_organisador')->references('id')->on('users');
         });
     }
 
