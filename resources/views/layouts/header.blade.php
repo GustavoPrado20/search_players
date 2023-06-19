@@ -15,21 +15,23 @@
 
         <nav class = "menu scrollbar-warning">
             <ul class = "menu_list">
+                <!- Foto de perfil do Usuario -->
                 <li class = "menu_item_perfil border-bottom border-white">
                     <a href = "perfil.php">
                         <figure>
-                            @if (empty($foto_usuario))
+                            @if (empty($foto_usuario)) <!- imagem caso o Usuario nao tenha adicionado nenhuma foto de perfil | Imaem padrao so sistema -->
                                 @if (empty($sexo_usuario) || $sexo_usuario == "masculino")
                                     <img class = "user_img" src = "{{asset('img/foto_perfis/user_m.svg')}}" alt = "Imagem Usuario">
                                 @else
                                     <img class = "user_img" src = "{{asset('img/foto_perfis/user_f.svg')}}" alt = "Imagem Usuaria">
                                 @endif
-                            @else
+                            @else <!- Foto de perfil adicionada pelo Usuario -->
                                  <img class = "user_img" src = "{{asset('img/foto_perfis/'$foto_usuario)}}" alt = "Imagem Usuario">
                             @endif
                         </figure>
                     </a>
 
+                    <!- Nome do Usuario -->
                     <a class = "menu_link_perfil" href = "perfil.php">
                         <h4>
                             @php
@@ -38,7 +40,8 @@
                         </h4>
                     </a>
                 </li>
-
+                
+                <!- inicio da navegação do menu -->
                 <li class = "menu_item">
                     <a class="menu_link" href="home.php">
                         <i class = "menu_icon fas fa-home"></i>
