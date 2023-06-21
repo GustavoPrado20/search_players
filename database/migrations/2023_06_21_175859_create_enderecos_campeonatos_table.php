@@ -11,18 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('times', function (Blueprint $table) {
+        Schema::create('enderecos_campeonatos', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
-            $table->string('brasao_time');
-            $table->integer('esporte');
-            $table->unsignedBigInteger('id_dono');
-            $table->integer('pontos');
-            $table->string('lema');
+            $table->unsignedBigInteger('id_campeonatos');
+            $table->string('cep', 10)->nullable();
+            $table->string('estado', 2)->nullable();
+            $table->string('cidade', 80)->nullable();
             $table->timestamps();
 
             //foreign keys
-            $table->foreign('id_dono')->references('id')->on('users');
+            $table->foreign('id_campeonatos')->references('id')->on('campeonatos');
         });
     }
 
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('times');
+        Schema::dropIfExists('endereco_campeonatos');
     }
 };

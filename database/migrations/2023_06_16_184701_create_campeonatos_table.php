@@ -14,9 +14,6 @@ return new class extends Migration
         Schema::create('campeonatos', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->string('cep', 10)->nullable();
-            $table->string('estado', 2)->nullable();
-            $table->string('cidade', 80)->nullable();
             $table->unsignedBigInteger('id_organisador');
             $table->string('premiacao');
             $table->decimal('taxa_inscricao', 10, 2);
@@ -26,7 +23,7 @@ return new class extends Migration
             $table->date('data_fim');
             $table->integer('tipo');
             $table->integer('esporte');
-            $table->string('logo_campeonato');
+            $table->string('logo');
             $table->timestamps();
 
             //Foreign keys

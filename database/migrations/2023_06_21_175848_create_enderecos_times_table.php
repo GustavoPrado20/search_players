@@ -11,20 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('contratos', function (Blueprint $table) {
+        Schema::create('enderecos_times', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_jogador');
-            $table->unsignedBigInteger('id_contratante');
             $table->unsignedBigInteger('id_time');
-            $table->decimal('preco', 10, 2);
-            $table->string('status');
-            $table->integer('tipo_contrato');
-            $table->string('posicao')->nullable();
+            $table->string('cep', 10)->nullable();
+            $table->string('estado', 2)->nullable();
+            $table->string('cidade', 80)->nullable();
+            $table->string('bairro', 80)->nullable();
+            $table->string('rua', 80)->nullable();
+            $table->string('numero', 5)->nullable();
             $table->timestamps();
 
             //foreign keys
-            $table->foreign('id_jogador')->references('id')->on('users');
-            $table->foreign('id_contratante')->references('id')->on('users');
             $table->foreign('id_time')->references('id')->on('times');
         });
     }
@@ -34,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('contratos');
+        Schema::dropIfExists('endereco_times');
     }
 };
