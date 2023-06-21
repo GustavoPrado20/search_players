@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class jogadores_time extends Model
 {
     use HasFactory;
+
+    protected $table = 'jogadores_times';
+
+    protected $fillable = 'posicao';
 }

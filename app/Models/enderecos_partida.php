@@ -5,15 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class notificacao extends Model
+class enderecos_partida extends Model
 {
     use HasFactory;
 
-    protected $table = 'notificacoes';
+    protected $table = 'enderecos_partidas';
 
     protected $fillable = [
-        'notificacao',
-        'link',
-        'status',
+        'cep',
+        'estado',
+        'cidade',
+        'bairro',
+        'rua',
+        'numero',
     ];
 }

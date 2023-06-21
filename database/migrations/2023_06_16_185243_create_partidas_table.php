@@ -15,12 +15,6 @@ return new class extends Migration
             $table->id();
             $table->date('data');
             $table->time('hora');
-            $table->string('cep', 10)->nullable();
-            $table->string('estado', 2)->nullable();
-            $table->string('cidade', 80)->nullable();
-            $table->string('bairro', 80)->nullable();
-            $table->string('rua', 80)->nullable();
-            $table->string('numero', 5)->nullable(); 
             $table->string('resultado')->nullable();
             $table->unsignedBigInteger('id_time_1');
             $table->unsignedBigInteger('id_time_2');

@@ -53,4 +53,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function enderecos(){
+        return $this->hasOne(related: enderecos::class, foreignKey: 'id_usuario', localKey: 'id');
+    }
 }
