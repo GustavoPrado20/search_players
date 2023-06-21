@@ -16,4 +16,6 @@ class notificacao extends Model
         'link',
         'status',
     ];
+
+    
 }

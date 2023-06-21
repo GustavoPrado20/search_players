@@ -54,7 +54,53 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function enderecos(){
-        return $this->hasOne(related: enderecos::class, foreignKey: 'id_usuario', localKey: 'id');
+    //Relação com a model endereco
+    public function endereco(){
+        return $this->hasOne(related: endereco::class, foreignKey: 'id_usuario', localKey: 'id');
+    }
+
+    //relação com a model sugestao
+    public function sugestao(){
+        return $this->hasMany(related: sugestao::class, foreignKey: 'id_usuario', localKey: 'id');
+    }
+
+    //Relação com a model partida
+    public function partida(){
+        return $this->hasMany(related: partida::class, foreignKey: 'id_analisador', localKey: 'id');
+    }
+
+    //Relação com a model notificacao
+    public function notificacao(){
+        return $this->hasMany(related: notificacao::class, foreignKey: ['id_usuario_1', 'id_usuario_2'], localKey: 'id');
+    }
+
+    //Relação com a model jogadores_times
+    public function jogadores_time(){
+        return $this->hasMany(related: jogadores_time::class, foreignKey: 'id_jogador', localKey: 'id');
+    }
+
+    //relação com a model feedback_saida
+    public function feedbck_saida(){
+        return $this->hasOne(related: feedbck_saida::class, foreignKey: 'id_usuario', localKey: 'id');
+    }
+
+    //relacao com a model contrato
+    public function contrato(){
+        return $this->hasMany(related: contrato::class, foreignKey: ['id_jogador', 'id_contratante'], localKey: 'id');
+    }
+
+    //relacao com a model chat_time
+    public function chat_time(){
+        return $this->hasMany(related: chat_time::class, foreignKey: 'id_usuario', localKey: 'id');
+    }
+
+    //relacao com a model chat
+    public function chat(){
+        return $this->hasMany(related: chat::class, foreignKey: ['id_usuario', 'id_destino'], localKey: 'id');
+    }
+
+    //relacao com a model campeonato
+    public function campeonato(){
+        return $this->hasMany(related: campeonato::class, foreignKey: 'id_organisador', localKey: 'id');
     }
 }

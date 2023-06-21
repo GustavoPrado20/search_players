@@ -18,6 +18,7 @@ class endereco extends Model
         'bairro',
     ];
 
+    //revertendo o relacionamento com a model user
     public function user(){
         return $this->belongsTo(related: User::class, foreignKey: 'id_usuario', ownerKey: 'id');
     }

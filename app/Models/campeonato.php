@@ -21,4 +21,19 @@ class campeonato extends Model
         'tipo',
         'foto',
     ];
+
+    //relacao com a model times_campeonato
+    public function times_campeonato(){
+        return $this->hasMany(related: times_campeonato::class, foreignKey: 'id_campeonato', ownerKey: 'id');
+    }
+
+    //revertendo a relacao com a model User
+    public function User(){
+        return $this->belongsTo(related: User::class, foreignKey: 'id_organisador', ownerKey: 'id');
+    }
+
+    //revertendo a relacao com a model partida
+    public function partida(){
+        return $this->belongsTo(related: partida::class, foreignKey: 'id_campeonato', ownerKey: 'id');
+    }
 }
