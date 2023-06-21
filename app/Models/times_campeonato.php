@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class times_campeonato extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'colocacao',
+        'pontos',
+        'status',
+    ];
 }
