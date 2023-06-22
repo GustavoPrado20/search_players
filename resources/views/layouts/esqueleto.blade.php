@@ -1,7 +1,7 @@
-!DOCTYPE html
+<!DOCTYPE html>
 <html lang = "pt-BR">
     <head>
-        <link rel = "stylesheet" href = "{{asset('css/bootstrap.css')}}">
+        <link rel = "stylesheet" href = "{{asset('css/bootstrap.min.css')}}">
 		<link rel = "stylesheet" href = "{{asset('css/main.css')}}">
 		<link rel = "stylesheet" href = "{{asset('css/style_login.css')}}">
 		<link rel = "stylesheet" href = "{{asset('css/style_camp.css')}}">
