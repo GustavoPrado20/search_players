@@ -34,9 +34,7 @@
                     <!- Nome do Usuario -->
                     <a class = "menu_link_perfil" href = "perfil.php">
                         <h4>
-                            @php
-                                ucwords($nome);
-                            @endphp
+                        	{{echo ucwords($nome);}}
                         </h4>
                     </a>
                 </li>
@@ -203,7 +201,3 @@
 	</ul>
 
 </header>
-
-<script  src = "https://code.jquery.com/jquery-3.6.1.min.js" ></ script >
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" ></script>
-<script defer src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" integrity="sha384-9/D4ECZvKMVEJ9Bhr3ZnUAF+Ahlagp1cyPC7h5yDlZdXs4DQ/vRftzfd+2uFUuqS" crossorigin="anonymous"></script>
