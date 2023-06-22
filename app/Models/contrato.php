@@ -17,4 +17,14 @@ class contrato extends Model
         'tipo_contrato',
         'posicao',
     ];
+
+    //revertendo relacao com a model User
+    public function User(){
+        return $this->belongsTo(related: User::class, foreignKey: ['id_jogador', 'id_contratante'], ownerKey: 'id');
+    }
+
+    //Revertendo relacao com a model times
+    public function times(){
+        return $this->belongsTo(related: times::class, foreignKey: 'id_time', ownerKey: 'id');
+    }
 }

@@ -14,8 +14,6 @@ return new class extends Migration
         Schema::create('sugestoes', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_usuario');
-            $table->string('nome');
-            $table->string('email');
             $table->string('sugestao');
             $table->timestamps();
 

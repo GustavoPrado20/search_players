@@ -17,7 +17,6 @@ return new class extends Migration
             $table->unsignedBigInteger('id_organisador');
             $table->string('premiacao');
             $table->decimal('taxa_inscricao', 10, 2);
-            $table->string('nome_organizador');
             $table->integer('numero_times');
             $table->date('data_inicio');
             $table->date('data_fim');

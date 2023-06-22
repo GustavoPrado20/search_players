@@ -16,6 +16,9 @@ class notificacao extends Model
         'link',
         'status',
     ];
-
     
+    //Revertendo relacacao com a model User
+    public function User(){
+        return $this->belongsTo(related: User::class, foreignKey: ['id_usuario_1', 'id_usuario_2'], ownerKey: 'id');
+    }
 }

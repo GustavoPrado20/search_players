@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->string('brasao_time');
-            $table->integer('esporte');
+            $table->string('esporte');
             $table->unsignedBigInteger('id_dono');
             $table->integer('pontos');
             $table->string('lema');

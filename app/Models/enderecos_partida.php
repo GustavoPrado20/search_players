@@ -19,4 +19,9 @@ class enderecos_partida extends Model
         'rua',
         'numero',
     ];
+
+    //revertendo relacao com a model partida
+    public function partida(){
+        return $this->belongsTo(related: partida::class, foreignKey: 'id_partida', ownerKey: 'id');
+    }
 }

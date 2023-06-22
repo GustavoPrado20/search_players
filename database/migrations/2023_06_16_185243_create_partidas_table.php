@@ -20,7 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_time_2');
             $table->unsignedBigInteger('id_analisador')->nullable();
             $table->unsignedBigInteger('id_campeonato')->nullable();
-            $table->integer('esporte');
+            $table->string('esporte');
             $table->timestamps();
 
             //foreign keys

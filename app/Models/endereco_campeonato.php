@@ -16,4 +16,8 @@ class endereco_campeonato extends Model
         'estado',
         'cidade',
     ];
+
+    public function campeonato(){
+        return $this->belongsTo(related: campeonato::class, foreignKey: 'id_campeonato', ownerKey: 'id');
+    }
 }

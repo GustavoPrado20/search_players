@@ -11,5 +11,13 @@ class chat extends Model
 
     protected $table = 'chats';
 
-    protected $fillable = 'mensagem';
+    protected $fillable = [
+        'mensagem',
+        'registro_conversa',
+    ];
+
+    //revertendo relacao com a model User
+    public function User(){
+        return $this->belongsTo(related: User::class, foreignKey: ['id_usuario', 'id_destino'], ownerKey: 'id');
+    }
 }

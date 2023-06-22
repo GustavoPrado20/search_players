@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('sexo', 10)->nullable();
             $table->string('sobre')->nullable();
             $table->string('site')->nullable();
-            $table->integer('esporte')->nullable();
+            $table->string('esporte')->nullable();
             $table->string('banner')->nullable();
             $table->decimal('preco', 10, 2)->nullable();
             $table->integer('pontos')->nullable();

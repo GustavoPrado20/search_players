@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('id_time');
             $table->unsignedBigInteger('id_usuario');
-            $table->string('nome');
             $table->string('mensagem');
             $table->timestamps();
 

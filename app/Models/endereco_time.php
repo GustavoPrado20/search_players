@@ -19,4 +19,9 @@ class endereco_time extends Model
         'rua',
         'numero',
     ];
+
+    //revertendo relacao com a model time
+    public function times(){
+        return $this->belongsTo(related: times::class, foreignKey: 'id_time', ownerKey: 'id');
+    }
 }

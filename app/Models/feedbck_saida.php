@@ -12,4 +12,9 @@ class feedbck_saida extends Model
     protected $table = 'feedbck_saidas';
 
     protected $fillable = 'opiniao';
+
+    //Revertendo relacao com a model User
+    public function User(){
+        return $this->belongsTo(related: User::class, foreignKey: 'id_usuario', ownerKey: 'id');
+    }
 }

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_contrado');
             $table->unsignedBigInteger('id_time');
             $table->string('posicao');
-            $table->integer('esporte');
+            $table->string('esporte');
             $table->timestamps();
 
             //foreign keys
