@@ -156,6 +156,8 @@
 
         <!- inicio pesquisar -->
         <form class="search_box" name="pesquisar" method="POST" action="buscar.php">
+			@csrf
+		
             <input class="search_txt" type="text" name="busca" placeholder="Pesquisar" required="required"/ value= @if(!empty($busca)) {{$busca}} @endif >
             <button class="search_btn" type="submit" name="enviar">
 				<i class="fas fa-search"></i>

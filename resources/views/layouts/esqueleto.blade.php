@@ -19,12 +19,16 @@
 		<link href = "https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,600&display=swap" rel = "stylesheet">	
 		<link rel = "sortcut icon" href = "{{asset('img/icon.png')}}" type = "image/x-icon" />
 
+		<!- csrf token ->
+		<meta name="csrf-token" content="{{ csrf_token() }}">
+
 		<meta charset = "UTF-8">		
 		<meta name = "author" content="Equipe Search Players">
 		<meta name = "description" content="Página de Inicio">
 		<meta name = "keywords" content="Search Players">
 
 		<title>Search Players</title>
+		@vite(['resources/sass/app.scss', 'resources/js/app.js'])
     </head>
 
 	<body>

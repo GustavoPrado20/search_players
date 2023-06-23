@@ -5,6 +5,7 @@
 				<div class="col-md-6">
 					<h3 class="footer_title">Sugestões</h3>
 					<form name="sugestao" method="POST" action="#">
+						@csrf
 
 						<div class="form-grup">
 							<label for="nome" style="color:#100b25;">Nome</label>

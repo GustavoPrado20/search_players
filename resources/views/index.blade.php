@@ -11,8 +11,9 @@
 		<meta charset="UTF-8">		
 		<meta name="author" content="Equipe Search Players">
 		<meta name="description" content="Página de Inicio">
-		<meta name="keywords" content="Search Playerssection
+		<meta name="keywords" content="Search Players">
 		<title>Search Players</title>
+
 	</head>
 
 	<body>
@@ -43,6 +44,8 @@
 					</figure>
 					<section class="box">
 						<form name="login" method="POST" action="logar.php" id="login-form">
+							@csrf
+
 							<section class="form-group">	
 								<label for="login"><h5>Email</h5></label>
 								<input id="login" class="form-control" name="email" type="text" placeholder="Informe seu Email" autofocus/>
@@ -78,19 +81,25 @@
 		     		</section>
 			      	<section class="modal-body">
 			      		<section class="container-fluid">	
-							<form id="cadastre-form" name="form" method="POST" action="registrar.php">
+							<form id="cadastre-form" name="form" method="POST" action="{{route('register')}}">
+								@csrf
+
 								<section class="row">
 									<section class="col-md-6 form-group">
 										<label for="nome">Nome</label>
-										<input class="form-control" id="nome" type="text" name="nome" placeholder="Nome" autofocus/>
-										<span class='erro-validacao template msg-nome'>
+										<input class="form-control @error('name') is-invalid @enderror" id="nome" type="text" name="nome" placeholder="Nome" autofocus required/>
+										
+										@error('name')
+											<span class="invalid-feedback" role="alert">
+												<strong>{{ $message }}</strong>
+											</span>
+										@enderror
 									</section>
 
 
 									<section class="col-md-6 form-group">
 										<label for="sobrenome">Sobrenome</label>
 										<input class="form-control" id="sobrenome" type="text" name="sobrenome" placeholder="Sobrenome"/>
-										<span class='erro-validacao template msg-sobrenome'></span>
 									</section>
 								</section>
 
@@ -98,43 +107,52 @@
 									<label for="email">
 										Email
 									</label>
-									<input class="form-control" id="email" type="text" name="email" placeholder="Email"/>
-									<span class='erro-validacao template msg-Email'></span>
+									<input class="form-control @error('email') is-invalid @enderror" id="email" type="text" name="email" placeholder="Email" required/>
+									@error('email')
+                                    	<span class="invalid-feedback" role="alert">
+                                 	  		<strong>{{ $message }}</strong>
+                               	 		</span>
+                           	 		@enderror
 								</section>
 
 								<section class="form-group">
-									<label for="senha">
+									<label for=password">
 										Senha
 									</label>
-									<input class="form-control" id="senha" type="password" name="senha" placeholder="Senha"/>
-									<span class='erro-validacao template msg-senha'></span>
+									<input class="form-control @error('password') is-invalid @enderror" id="senha" type="password" name="password" placeholder="Senha" required autocomplete="new-password"/>
+									
+									@error('password')
+                                    	<span class="invalid-feedback" role="alert">
+                                   	    	<strong>{{ $message }}</strong>
+                                    	</span>
+                               	 	@enderror
 								</section>
 
 								<section class="form-group">
-									<label for="c_senha">
+									<label for="password_confirmation">
 										Confirme a Senha
 									</label>
-									<input class="form-control" id="senha2" type="password" name="c_senha" placeholder="Confirme a Senha"/>
+									<input class="form-control" id="senha2" type="password" name="password_confirmation" placeholder="Confirme a Senha" required/>
 									<span class='erro-validacao template msg-senha2'></span>
 								</section>
 
 								<section>
 									<section>
-										<input class="jogador" type="radio" name="tipo" value="1" id="jogador" required/>
+										<input class="jogador" type="radio" name="tipo_usuario" value="jogador" id="jogador" required />
 										<label for="jogador">	
 											Jogadorx
 										</label>
 									</section>
 
 									<section>
-										<input type="radio" name="tipo" value="2" id="adm"/>
+										<input type="radio" name="tipo_usuario" value="administrador_time" id="adm"/>
 										<label for="adm">
 											Administradorx de um Time
 										</label>
 									</section>
 
 									<section>
-										<input type="radio" name="tipo" value="3" id="analisador"/>
+										<input type="radio" name="tipo_usuario" value="analisador" id="analisador"/>
 										<label for="analisador">
 											Analisadorx de Partidas
 										</label>

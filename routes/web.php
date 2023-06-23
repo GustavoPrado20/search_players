@@ -14,36 +14,37 @@ use App\Http\Controllers;
 |
 */
 
-Route::get('/', [App\Http\Controllers\IndexController::class, 'index'])->name('index');
+Route::get('/', [Controllers\IndexController::class, 'index'])->name('index');
 
-Auth::routes();
+Route::get('/home', [Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::prefix('/configuração', function(){
-    Route::get('/perfil', [App\Http\Controllers\ConfigPerfilController::class, ''])->name('config_perfil');
-    Route::get('/conta', [App\Http\Controllers\ConfigContaController::class, ''])->name('config_conta');
-    Route::get('/localização', [App\Http\Controllers\ConfigLocalizacaoController::class, ''])->name('config_localizacao');
-    Route::get('/time', [App\Http\Controllers\ConfigTimeController::class, ''])->name('config_time');
+Route::prefix('/configuração')->group(function(){
+    Route::get('/perfil', [Controllers\ConfiguracaoController::class, 'config_perfil'])->name('config_perfil');
+    Route::get('/conta', [Controllers\ConfiguracaoController::class, 'config_conta'])->name('config_conta');
+    Route::get('/localização', [Controllers\ConfiguracaoController::class, 'config_localizacao'])->name('config_localizacao');
+    Route::get('/time', [Controllers\ConfiguracaoController::class, 'config_time'])->name('config_time');
 });
 
-Route::get('/perfil', [App\Http\Controllers\PerfilController::class, ''])->name('perfil');
+Route::get('/perfil', [Controllers\PerfilController::class, ''])->name('perfil');
 
-Route::get('/times', [App\Http\Controllers\TimesController::class, ''])->name('times');
+Route::get('/times', [Controllers\TimeController::class, ''])->name('times');
 
-Route::get('/times/meu_time', [App\Http\Controllers\MeuTimeController::class, ''])->name('meu_time');
+Route::get('/times/meu_time', [Controllers\MeuTimeController::class, ''])->name('meu_time');
 
-Route::get('/jogadores', [App\Http\Controllers\jogadoresController::class, ''])->name('jogadores');
+Route::get('/jogadores', [Controllers\jogadoresController::class, ''])->name('jogadores');
 
-Route::get('/campeonato', [App\Http\Controllers\CampeonatosController::class, ''])->name('campeonatos');
+Route::get('/campeonato', [Controllers\CampeonatoController::class, ''])->name('campeonatos');
 
-Route::get('/partidas', [App\Http\Controllers\PartidasController::class, ''])->name('partidas');
+Route::get('/partidas', [Controllers\PartidaController::class, ''])->name('partidas');
 
-Route::get('/ranking', [App\Http\Controllers\RankingController::class, ''])->name('ranking');
+Route::get('/ranking', [Controllers\RankingController::class, ''])->name('ranking');
 
-Route::prefix('/conversa', function(){
-    Route::get('/contatos', [App\Http\Controllers\ChatController::class, ''])->name('contatos');
-    Route::get('/chat', [App\Http\Controllers\ChatController::class, ''])->name('chat');
-    Route::get('/chat_time', [App\Http\Controllers\ChatController::class, ''])->name('chat_time');
+Route::prefix('/conversa')->group(function(){
+    Route::get('/contatos', [Controllers\ChatController::class, ''])->name('contatos');
+    Route::get('/chat', [Controllers\ChatController::class, ''])->name('chat');
+    Route::get('/chat_time', [Controllers\ChatController::class, ''])->name('chat_time');
 });
 
+//Metodos POST
+
+Route::post('/', [Controllers\IndexController::class, 'registrar'])->name('index');
