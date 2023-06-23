@@ -17,6 +17,6 @@ class sugestao extends Model
 
     //revertendo relacao com a model User
     public function User(){
-        return $this->belongsTo(related: User::class, foreignKey: 'id_usuario', ownerKey: 'id');
+        return $this->belongsToMany(related: User::class, foreignKey: 'id_usuario', ownerKey: 'id');
     }
 }

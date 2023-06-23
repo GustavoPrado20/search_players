@@ -13,7 +13,6 @@
 		<meta name="description" content="Página de Inicio">
 		<meta name="keywords" content="Search Players">
 		<title>Search Players</title>
-
 	</head>
 
 	<body>
@@ -43,17 +42,17 @@
 						<img class="logo" src="./img/logo_light.png" alt="Logo Search Players">
 					</figure>
 					<section class="box">
-						<form name="login" method="POST" action="logar.php" id="login-form">
+						<form name="login" method="POST" action="{{ route('login') }}" id="login-form">
 							@csrf
 
 							<section class="form-group">	
 								<label for="login"><h5>Email</h5></label>
-								<input id="login" class="form-control" name="email" type="text" placeholder="Informe seu Email" autofocus/>
+								<input id="login" class="form-control" name="email" type="text" placeholder="Informe seu Email" value = "{{ old('email') }}" autofocus/>
 								<span class='erro-validacao template msg-emaill'/>
 							</section>
 							<section class="form-group">
 								<label for="senha"><h5>Senha</h5></label>
-								<input id="senhal" class="form-control" name="senha" type="password" placeholder="******"/>
+								<input id="senhal" class="form-control" name="password" type="password" value = "{{ old('password') }}" placeholder="******"/>
 								<span class='erro-validacao template msg-senhal'/>
 							</section>
 								<input class="btn btn-outline-light btn-block" type="submit" name="Entrar" Value="Entrar">
@@ -62,7 +61,7 @@
 					<section class="box_min">
 						<span>
 							Não está cadastrado?
-							<a href="#" data-toggle="modal" data-target="#tipo-usuario">Clique aqui</a>
+							<a href="{{ route('index') }}" data-toggle="modal" data-target="#tipo-usuario">Clique aqui</a>
 						</span>
 					</section>
 				</section>
@@ -81,25 +80,25 @@
 		     		</section>
 			      	<section class="modal-body">
 			      		<section class="container-fluid">	
-							<form id="cadastre-form" name="form" method="POST" action="{{route('register')}}">
+							<form id="cadastre-form" name="form" method="POST" action="{{ route('registrar') }}">
 								@csrf
 
 								<section class="row">
 									<section class="col-md-6 form-group">
 										<label for="nome">Nome</label>
-										<input class="form-control @error('name') is-invalid @enderror" id="nome" type="text" name="nome" placeholder="Nome" autofocus required/>
-										
-										@error('name')
-											<span class="invalid-feedback" role="alert">
-												<strong>{{ $message }}</strong>
-											</span>
-										@enderror
+										<input class="form-control" id="nome" type="text" name="nome" placeholder="Nome" value = "{{ old('nome') }}" autofocus/>
+										<span class='erro-validacao template msg-nome'>
+											@error('nome')
+												{{ $message }}
+											@enderror
+										</span>
 									</section>
 
 
 									<section class="col-md-6 form-group">
 										<label for="sobrenome">Sobrenome</label>
-										<input class="form-control" id="sobrenome" type="text" name="sobrenome" placeholder="Sobrenome"/>
+										<input class="form-control" id="sobrenome" type="text" name="sobrenome" placeholder="Sobrenome" value = "{{ old('sobrenome') }}" />
+										<span class='erro-validacao template msg-sobrenome'></span>
 									</section>
 								</section>
 
@@ -107,38 +106,40 @@
 									<label for="email">
 										Email
 									</label>
-									<input class="form-control @error('email') is-invalid @enderror" id="email" type="text" name="email" placeholder="Email" required/>
-									@error('email')
-                                    	<span class="invalid-feedback" role="alert">
-                                 	  		<strong>{{ $message }}</strong>
-                               	 		</span>
-                           	 		@enderror
+									<input class="form-control" id="email" type="text" name="email" placeholder="Email" value = "{{ old('email') }}" />
+									<span class='erro-validacao template msg-Email'>
+										@error('email')
+											{{ $message }}
+										@enderror
+									</span>
 								</section>
 
 								<section class="form-group">
-									<label for=password">
+									<label for="senha">
 										Senha
 									</label>
-									<input class="form-control @error('password') is-invalid @enderror" id="senha" type="password" name="password" placeholder="Senha" required autocomplete="new-password"/>
-									
-									@error('password')
-                                    	<span class="invalid-feedback" role="alert">
-                                   	    	<strong>{{ $message }}</strong>
-                                    	</span>
-                               	 	@enderror
+									<input class="form-control" id="senha" type="password" name="password" placeholder="Senha" value = "{{ old('password') }}"/>
+									<span class='erro-validacao template msg-senha'>
+										@error('password')
+											{{ $message }}
+										@enderror
+									</span>
 								</section>
 
 								<section class="form-group">
-									<label for="password_confirmation">
+									<label for="c_senha">
 										Confirme a Senha
 									</label>
-									<input class="form-control" id="senha2" type="password" name="password_confirmation" placeholder="Confirme a Senha" required/>
-									<span class='erro-validacao template msg-senha2'></span>
+									<input class="form-control" id="senha2" type="password" name="password_confirmation" value = "{{ old('password_confirmation') }}" placeholder="Confirme a Senha"/>
+									<span class='erro-validacao template msg-senha2'>
+										@error('password_confirmation')
+											{{ $message }}
+										@enderror</span>
 								</section>
 
 								<section>
 									<section>
-										<input class="jogador" type="radio" name="tipo_usuario" value="jogador" id="jogador" required />
+										<input class="jogador" type="radio" name="tipo_usuario" value="jogador" id="jogador" required/>
 										<label for="jogador">	
 											Jogadorx
 										</label>
@@ -163,7 +164,7 @@
 									<input type="checkbox" name="termos" id="Termos de uso" value="termos" required/>
 									<label for="Termos de uso">
 										Li e aceito os
-										<a href="termos.html" target="_blank">
+										<a href="{{route('termos')}}" target="_blank">
 											termos de uso
 										</a>
 									</label>
@@ -171,9 +172,9 @@
 						</section>		
 					</section>
 		     		<section class="modal-footer">
-						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-						        <input type="submit" name="registrar" value="Registrar" class="btn btn-primary">
-					   		</form>
+						    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+						    <input type="submit" name="registrar" value="Registrar" class="btn btn-primary">
+					   	</form>
 					</section>		
 			    </section>
 			</section>
