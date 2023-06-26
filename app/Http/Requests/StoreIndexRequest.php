@@ -1,20 +1,38 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Requests;
 
-use Illuminate\Http\Request;
+use Illuminate\Foundation\Http\FormRequest;
 
-class ValidacaoController extends Controller
+class StoreIndexRequest extends FormRequest
 {
-    //Validação dos formularios login e registro
-    public function validacao(Request $request){
-        $regras = [
+    /**
+     * Determine if the user is authorized to make this request.
+     */
+    public function authorize(): bool
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
+     */
+    public function rules(): array
+    {
+        return [
             'nome' => ['required', 'string', 'max:100'],
             'email' => ['required', 'string', 'email', 'unique:users'],
-            'password' => ['required', 'string', 'password', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'tipo_usuario' => ['string'],
         ];
+    }
 
-        $feedback = [
+    //menssagens
+    public function messages(): array
+    {
+        return [
             //required
             'nome.required' => 'Preencha o campo Nome por favor!',
             'email.required' => 'Preencha o campo Email por favor!',
@@ -30,9 +48,5 @@ class ValidacaoController extends Controller
             //corfirmação
             'password.confirmed' => 'As senhas nao correspondem uma com a outra!',
         ];
-
-        $request->validate($regras, $feedback);
-
-        return redirect()->route('registrar');
     }
 }

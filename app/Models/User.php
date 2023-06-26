@@ -54,11 +54,6 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    //Registrando Usuario no BD
-    public function registrar_usuario(){
-        
-    }
-
     //RELAÇÔES ENTRE MODELOS
 
     //Relação com a model endereco

@@ -14,9 +14,13 @@ use App\Http\Controllers;
 |
 */
 
-Route::get('/', [Controllers\IndexController::class, 'index'])->name('index');
+Route::get('/', [Controllers\IndexController::class, 'Index'])->name('index');
 
-Route::get('/home', [Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/', [Controllers\IndexController::class, 'store'])->name('registrar-usuario');
+
+Route::get('/home', [Controllers\HomeController::class, 'Index'])->name('home');
+
+
 /*
 Route::prefix('/configuração')->group(function(){
     Route::get('/perfil', [Controllers\ConfiguracaoController::class, 'config_perfil'])->name('config_perfil');
@@ -45,9 +49,9 @@ Route::prefix('/conversa')->group(function(){
     Route::get('/chat_time', [Controllers\ChatController::class, ''])->name('chat_time');
 });
 
-Route::get('/termos', [Controllers\TermosController::class, ''])->name('termos');
-
 //Metodos POST
 Route::post('/registrar', [Controllers\IndexController::class, 'registrar'])->name('registrar');
 Route::post('/', [Controllers\IndexController::class, 'login'])->name('login');
 */
+
+Route::get('/termos', [Controllers\TermosController::class, ''])->name('termos');

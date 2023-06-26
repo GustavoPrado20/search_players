@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.esqueleto')
 
 @section('conteudo')
     <main class="principal">

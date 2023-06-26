@@ -42,7 +42,7 @@
 						<img class="logo" src="./img/logo_light.png" alt="Logo Search Players">
 					</figure>
 					<section class="box">
-						<form name="login" method="POST" action="{{ route('login') }}" id="login-form">
+						<form name="login" method="POST" action="#" id="login-form">
 							@csrf
 
 							<section class="form-group">	
@@ -80,7 +80,7 @@
 		     		</section>
 			      	<section class="modal-body">
 			      		<section class="container-fluid">	
-							<form id="cadastre-form" name="form" method="POST" action="{{ route('registrar') }}">
+							<form id="cadastre-form" name="form" method="POST" action="{{ route('registrar-usuario') }}">
 								@csrf
 
 								<section class="row">
