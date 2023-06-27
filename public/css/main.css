@@ -390,3 +390,11 @@ main{
   width: 300px;
   height: 300px;
 }
+
+.erro-validacao{
+  color: #ff0000;
+}
+
+.erro-validacao2{
+  color: #000000;
+}

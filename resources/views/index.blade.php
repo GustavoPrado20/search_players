@@ -48,12 +48,12 @@
 							<section class="form-group">	
 								<label for="login"><h5>Email</h5></label>
 								<input id="login" class="form-control" name="email" type="text" placeholder="Informe seu Email" value = "{{ old('email') }}" autofocus/>
-								<span class='erro-validacao template msg-emaill'/>
+								<span class='erro-validacao2 template msg-emaill'/>
 							</section>
 							<section class="form-group">
 								<label for="senha"><h5>Senha</h5></label>
 								<input id="senhal" class="form-control" name="password" type="password" value = "{{ old('password') }}" placeholder="******"/>
-								<span class='erro-validacao template msg-senhal'/>
+								<span class='erro-validacao2 template msg-senhal'/>
 							</section>
 								<input class="btn btn-outline-light btn-block" type="submit" name="Entrar" Value="Entrar">
 						</form>
@@ -61,7 +61,7 @@
 					<section class="box_min">
 						<span>
 							Não está cadastrado?
-							<a href="{{ route('index') }}" data-toggle="modal" data-target="#tipo-usuario">Clique aqui</a>
+							<a href="#" data-toggle="modal" data-target="#tipo-usuario">Clique aqui</a>
 						</span>
 					</section>
 				</section>
@@ -88,9 +88,6 @@
 										<label for="nome">Nome</label>
 										<input class="form-control" id="nome" type="text" name="nome" placeholder="Nome" value = "{{ old('nome') }}" autofocus/>
 										<span class='erro-validacao template msg-nome'>
-											@error('nome')
-												{{ $message }}
-											@enderror
 										</span>
 									</section>
 
@@ -108,9 +105,6 @@
 									</label>
 									<input class="form-control" id="email" type="text" name="email" placeholder="Email" value = "{{ old('email') }}" />
 									<span class='erro-validacao template msg-Email'>
-										@error('email')
-											{{ $message }}
-										@enderror
 									</span>
 								</section>
 
@@ -120,9 +114,6 @@
 									</label>
 									<input class="form-control" id="senha" type="password" name="password" placeholder="Senha" value = "{{ old('password') }}"/>
 									<span class='erro-validacao template msg-senha'>
-										@error('password')
-											{{ $message }}
-										@enderror
 									</span>
 								</section>
 
@@ -132,9 +123,7 @@
 									</label>
 									<input class="form-control" id="senha2" type="password" name="password_confirmation" value = "{{ old('password_confirmation') }}" placeholder="Confirme a Senha"/>
 									<span class='erro-validacao template msg-senha2'>
-										@error('password_confirmation')
-											{{ $message }}
-										@enderror</span>
+									</span>
 								</section>
 
 								<section>
@@ -180,7 +169,8 @@
 			</section>
 		</section>
 
-			<!--Scripts-->
+		<!--Scripts-->
+		<script type="text/javascript" src="{{asset('js/cadastro.js')}}"></script>
 		<script type="text/javascript" src="{{asset('js/jquery-3.5.1.min.js')}}"></script>
 		<script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
 	</body>

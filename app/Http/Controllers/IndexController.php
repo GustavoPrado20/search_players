@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Repositories\UserRepository;
 use App\Http\Requests\StoreIndexRequest;
+use Illuminate\Support\Facades\Auth;
 
 class IndexController extends Controller
 {
@@ -12,36 +13,20 @@ class IndexController extends Controller
         return view('index');
     }
 
-    public function create(){
-
-    }
-
-    public function store(StoreIndexRequest $request){
+    public function registrar(StoreIndexRequest $request){
         $data = $request->validated();
 
         $registrar = UserRepository::create($data);
 
-        if(!$registrar){
-            return view('index');
+        if($registrar){
+            $credenciais = $request->only('email', 'password');
+
+            if(Auth::attempt($credenciais)){
+                $request->session()->regenerate();
+
+                return redirect()->intended('home');
+            }
         }
-
-        return view('home');
-    }
-
-    public function show(){
-
-    }
-
-    public function edit(){
-    
-    }
-
-    public function update(){
-    
-    }
-
-    public function destroy(){
-
     }
 
 }

@@ -23,6 +23,7 @@ class StoreIndexRequest extends FormRequest
     {
         return [
             'nome' => ['required', 'string', 'max:100'],
+            'sobrenome' => ['required', 'string', 'max:100'],
             'email' => ['required', 'string', 'email', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'tipo_usuario' => ['string'],
@@ -35,6 +36,7 @@ class StoreIndexRequest extends FormRequest
         return [
             //required
             'nome.required' => 'Preencha o campo Nome por favor!',
+            'sobrenome.required' => 'Preencha o campo Nome por favor!',
             'email.required' => 'Preencha o campo Email por favor!',
             'password.required' => 'Preencha o campo Senha por favor!',
 
@@ -43,6 +45,7 @@ class StoreIndexRequest extends FormRequest
 
             //max e min
             'nome.max' => 'O campo nome ultrapassou o limite de caracteres!',
+            'sobrenome.max' => 'O campo nome ultrapassou o limite de caracteres!',
             'password.min' => 'Porfavor insira no minimo 8 caracteres!',
 
             //corfirmação

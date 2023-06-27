@@ -16,7 +16,7 @@ use App\Http\Controllers;
 
 Route::get('/', [Controllers\IndexController::class, 'Index'])->name('index');
 
-Route::post('/', [Controllers\IndexController::class, 'store'])->name('registrar-usuario');
+Route::post('/registrar', [Controllers\IndexController::class, 'registrar'])->name('registrar-usuario');
 
 Route::get('/home', [Controllers\HomeController::class, 'Index'])->name('home');
 
