@@ -3,18 +3,18 @@
     <head>
         <link rel = "stylesheet" href = "{{asset('css/bootstrap.min.css')}}">
 		<link rel = "stylesheet" href = "{{asset('css/main.css')}}">
-		<link rel = "stylesheet" href = "{{asset('css/style_login.css')}}">
-		<link rel = "stylesheet" href = "{{asset('css/style_camp.css')}}">
-		<link rel = "stylesheet" href = "{{asset('css/style_chat.css')}}">
-		<link rel = "stylesheet" href = "{{asset('css/style_config.css')}}">
 		<link rel = "stylesheet" href = "{{asset('css/style_footer.css')}}">
 		<link rel = "stylesheet" href = "{{asset('css/style_header.css')}}">
 		<link rel = "stylesheet" href = "{{asset('css/style_home.css')}}">
+		<link rel = "stylesheet" href = "{{asset('css/style.css')}}">
+		<link rel = "stylesheet" href = "{{asset('css/style_camp.css')}}">
+		<link rel = "stylesheet" href = "{{asset('css/style_chat.css')}}">
+		<link rel = "stylesheet" href = "{{asset('css/style_config.css')}}">
 		<link rel = "stylesheet" href = "{{asset('css/style_meutime.css')}}">
 		<link rel = "stylesheet" href = "{{asset('css/style_partidas.css')}}">
 		<link rel = "stylesheet" href = "{{asset('css/style_perfil.css')}}">
-		<link rel = "stylesheet" href = "{{asset('css/style.css')}}">
-		<link rel = "stylesheet" href = "{{asset('css/termos.css')}}">
+		<link rel = "stylesheet" href = "{{asset('css/style_rank.css')}}">
+		<link rel = "stylesheet" href = "{{asset('css/style_termos.css')}}">
 		<link rel = "preconnect" href = "https://fonts.gstatic.com">
 		<link href = "https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,600&display=swap" rel = "stylesheet">	
 		<link rel = "sortcut icon" href = "{{asset('img/icon.png')}}" type = "image/x-icon" />
@@ -28,13 +28,12 @@
 		<meta name = "keywords" content="Search Players">
 
 		<title>Search Players</title>
-		@vite(['resources/sass/app.scss', 'resources/js/app.js'])
     </head>
 
 	<body>
 		@include('layouts.header')
 
-		@yeild('conteudo')
+		@yield('conteudo')
 
 		@include('layouts.footer')
 	</body>

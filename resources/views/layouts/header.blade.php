@@ -19,14 +19,14 @@
                 <li class = "menu_item_perfil border-bottom border-white">
                     <a href = "perfil.php">
                         <figure>
-                            @if (empty($foto_usuario)) <!- imagem caso o Usuario nao tenha adicionado nenhuma foto de perfil | Imaem padrao so sistema -->
-                                @if (empty($sexo_usuario) || $sexo_usuario == "masculino")
+                            @if (empty($dadosUsuario['foto'])) <!- imagem caso o Usuario nao tenha adicionado nenhuma foto de perfil | Imaem padrao so sistema -->
+                                @if (empty($dadosUsuario['sexo']) || $dadosUsuario['sexo'] == "masculino")
                                     <img class = "user_img" src = "{{asset('img/foto_perfis/user_m.svg')}}" alt = "Imagem Usuario">
                                 @else
                                     <img class = "user_img" src = "{{asset('img/foto_perfis/user_f.svg')}}" alt = "Imagem Usuaria">
                                 @endif
                             @else <!- Foto de perfil adicionada pelo Usuario -->
-                                 <img class = "user_img" src = "{{asset('img/foto_perfis/'$foto_usuario)}}" alt = "Imagem Usuario">
+                                 <img class = "user_img" src = "{{asset('img/foto_perfis/'. $dadosUsuario['foto'])}}" alt = "Imagem Usuario">
                             @endif
                         </figure>
                     </a>
@@ -34,7 +34,7 @@
                     <!- Nome do Usuario -->
                     <a class = "menu_link_perfil" href = "perfil.php">
                         <h4>
-                        	{{echo ucwords($nome);}}
+							{{ ucwords($dadosUsuario['nome']); }}
                         </h4>
                     </a>
                 </li>
@@ -47,7 +47,7 @@
                     </a>
                 </li>
 
-                @switch($tipo_usuario)
+                @switch($dadosUsuario['tipo_usuario'])
                     @case('jogador')
                         <li class="menu_item">
 							<a class="menu_link" href="meus_times.php">

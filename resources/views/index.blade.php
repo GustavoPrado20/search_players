@@ -42,22 +42,41 @@
 						<img class="logo" src="./img/logo_light.png" alt="Logo Search Players">
 					</figure>
 					<section class="box">
-						<form name="login" method="POST" action="#" id="login-form">
+						<form name="login" method="POST" action="{{ route('logar') }}" id="login-form">
 							@csrf
 
 							<section class="form-group">	
 								<label for="login"><h5>Email</h5></label>
 								<input id="login" class="form-control" name="email" type="text" placeholder="Informe seu Email" value = "{{ old('email') }}" autofocus/>
-								<span class='erro-validacao2 template msg-emaill'/>
+								<span class='erro-validacao2 template msg-emaill'>
+									@error('email')
+										{{ $message }}
+									@enderror
+
+									@if(!empty($erroLogin))
+										{{ $erroLogin }}
+									@endif
+								</span>
 							</section>
+
 							<section class="form-group">
 								<label for="senha"><h5>Senha</h5></label>
 								<input id="senhal" class="form-control" name="password" type="password" value = "{{ old('password') }}" placeholder="******"/>
-								<span class='erro-validacao2 template msg-senhal'/>
+								<span class='erro-validacao2 template msg-senhal'>
+									@error('password')
+										{{ $message }}
+									@enderror
+
+									@if(!empty($erroLogin))
+										{{ $erroLogin }}
+									@endif
+								</span>
 							</section>
-								<input class="btn btn-outline-light btn-block" type="submit" name="Entrar" Value="Entrar">
+
+							<input class="btn btn-outline-light btn-block" type="submit" name="Entrar" Value="Entrar">
 						</form>
 					</section>
+
 					<section class="box_min">
 						<span>
 							Não está cadastrado?
@@ -105,6 +124,9 @@
 									</label>
 									<input class="form-control" id="email" type="text" name="email" placeholder="Email" value = "{{ old('email') }}" />
 									<span class='erro-validacao template msg-Email'>
+										@error('email')
+											{{ $message }}
+										@enderror
 									</span>
 								</section>
 

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Repositories\UserRepository;
+use App\Http\Requests\StoreIndexRequest;
+use Illuminate\Support\Str;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $id = auth()->user()->id;
+
+        $dadosUsuario = UserRepository::find($id);
+
+        return view('home',['dadosUsuario' => $dadosUsuario]);
     }
 }

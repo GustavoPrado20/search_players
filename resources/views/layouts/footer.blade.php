@@ -9,13 +9,13 @@
 
 						<div class="form-grup">
 							<label for="nome" style="color:#100b25;">Nome</label>
-							<input id="Nome" class="form-control" disabled type="text" name="nome_sug" value = "{{echo ucwords($nome)}}">
+							<input id="Nome" class="form-control" disabled type="text" name="nome_sug" value = "{{ ucwords($dadosUsuario['nome']) }}">
 						</div>
 					
 					
 						<div class="form-grup">
 							<label for="email" style="color:#100b25;">Email</label>
-							<input class="form-control"  disabled type="text" name="email_sug" value="{{echo $email}}">
+							<input class="form-control"  disabled type="text" name="email_sug" value="{{ $dadosUsuario['email'] }}">
 						</div>
 						
 						<div class="form-grup">	
@@ -31,7 +31,7 @@
 					    	<div class="modal-content">
 					      		<div class="modal-header">
 					        		<h5 class="modal-title" id="exampleModalLabel">
-					        			@switch($sexo)
+					        			@switch($dadosUsuario['sexo'])
 					        				@case('masculino')
 					        					Agradecemos a sua sugestão, iremos tentar atende-lo o mais rápido possível!
 					        				@break
@@ -46,7 +46,7 @@
 					        		</h5>
 					     		</div>
 				     			<div class="modal-footer">
-							        <a href="{{}}"><button type="button" class="btn btn-secondary">OK</button></a>
+							        <a href=""><button type="button" class="btn btn-secondary">OK</button></a>
 							    </div>
 							</div>
 						</div>
@@ -60,7 +60,7 @@
 					        		<h5 class="modal-title" id="exampleModalLabel">Não foi possível enviar sua sugestão, tente novamente!</h5>
 					     		</div>
 				     			<div class="modal-footer">
-							        <a href="{{}}"><button type="button" class="btn btn-secondary">OK</button></a>
+							        <a href=""><button type="button" class="btn btn-secondary">OK</button></a>
 							    </div>
 							</div>
 						</div>
