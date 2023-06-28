@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Repositories\UserRepository;
 use App\Http\Requests\StoreIndexRequest;
-use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -31,5 +31,15 @@ class HomeController extends Controller
         $dadosUsuario = UserRepository::find($id);
 
         return view('home',['dadosUsuario' => $dadosUsuario]);
+    }
+
+    public function destroy(Request $request){
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect(route('index'));
     }
 }

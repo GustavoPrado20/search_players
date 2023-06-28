@@ -1,6 +1,6 @@
 <header class = "navbar navbar-expand navbar-dark flex-column fixed-top flex-md-row bd-navbar">
     <!- imagem Logo header ->
-    <a class = "navbar-brand mr-0 mr-md-2" href="home.php">
+    <a class = "navbar-brand mr-0 mr-md-2" href="{{route('home')}}">
         <img class="logo" src="{{asset('img/logo_light.png')}}" alt="Logo Search Players">
     </a>
 
@@ -26,7 +26,7 @@
                                     <img class = "user_img" src = "{{asset('img/foto_perfis/user_f.svg')}}" alt = "Imagem Usuaria">
                                 @endif
                             @else <!- Foto de perfil adicionada pelo Usuario -->
-                                 <img class = "user_img" src = "{{asset('img/foto_perfis/'. $dadosUsuario['foto'])}}" alt = "Imagem Usuario">
+                                 <img class = "user_img" src = "{{asset('img/foto_perfis/'.$dadosUsuario['foto'])}}" alt = "Imagem Usuario">
                             @endif
                         </figure>
                     </a>
@@ -197,7 +197,7 @@
 			<section class="dropdown-menu dropdown-menu-md-right" aria-labelledby="config">
 				<a class="dropdown-item" href="config_perfil.php">Configurações</a>
 				<a class="dropdown-item" href="perfil.php">Perfil</a>
-				<a class="dropdown-item" href="deslogar.php">Sair</a>
+				<a class="dropdown-item" href="{{ Route('logout') }}">Sair</a>
 			</section>
 		</li>
 	</ul>

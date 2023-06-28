@@ -22,6 +22,8 @@ Route::post('/registrar', [Controllers\IndexController::class, 'registrar'])->na
 
 Route::get('/home', [Controllers\HomeController::class, 'Index'])->name('home');
 
+Route::get('/logout', [Controllers\HomeController::class, 'destroy'])->name('logout');
+
 
 /*
 Route::prefix('/configuração')->group(function(){
