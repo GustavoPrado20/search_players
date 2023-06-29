@@ -29,7 +29,7 @@ Route::prefix('/conversas')->group(function(){
     Route::get('/chat', [Controllers\ChatController::class, 'chat'])->name('chat');
     Route::get('/chat_time', [Controllers\ChatController::class, 'chat_time'])->name('chat_time');
 
-    Route::get('/{$pesquisar}', [Controllers\ChatController::class, 'pesquisar'])->name('pesquisa_contato');
+    Route::get('/pesquisa', [Controllers\ChatController::class, 'pesquisar'])->name('pesquisa_contato');
 });
 
 

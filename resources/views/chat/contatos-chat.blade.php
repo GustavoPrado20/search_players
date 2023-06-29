@@ -8,9 +8,9 @@
 
         @if(!empty($dados))
             @foreach($dados as $dado)
-                <div class="card mb-3 mx-auto" style="max-width: 540px; background-color: #222;">
-                    <div class="row no-gutters">
-                        <div class="col-md-4">
+                <section class="card mb-3 mx-auto" style="max-width: 540px; background-color: #222;">
+                    <section class="row no-gutters">
+                        <section class="col-md-4">
                             <figure class="d-flex align-content-center mx-auto" style="width: 150px;">
                                 @empty($dado['foto']) <!- imagem caso o Usuario nao tenha adicionado nenhuma foto de perfil | Imaem padrao so sistema -->
                                     @if(empty($dado['sexo']) || $dado['sexo'] == 'masculino' || null)
@@ -22,9 +22,9 @@
                                 <!- Foto de perfil adicionada pelo Usuario -->
                                 <img class = "user_img" src = "{{asset('img/foto_perfis/'.$dado['foto'])}}" alt = "Imagem Usuario">
                             </figure>
-	    				</div>
-	  					<div class="col-md-8">
-						    <div class="card-body">
+	    				</section>
+	  					<section class="col-md-8">
+						    <section class="card-body">
 								<h5 class="titulo">
                                     {{ucwords($dado['nome'])}}
                                 </h5>
@@ -81,16 +81,16 @@
                                     <input type="hidden" name="id_destino" value = "{{$dado['id']}}">
                                     <input type="submit" name="conversar" value="Conversar" style="background-color:#ff3c00;" class="btn btn-danger">
                                 </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                            </section>
+                        </section>
+                    </section>
+                </section>
             @endforeach
         @else
             <section class="d-flex align-items-center flex-column">
-                <div class="mx-auto" style="width: 400px;">
-                    <img class="sem_pesquisa" style="width: 400px;" src="./img/sem_pesquisa.svg">
-                </div>
+                <section class="mx-auto" style="width: 400px;">
+                    <img class="sem_pesquisa" style="width: 400px;" src="{{asset('img/sem_pesquisa.svg')}}">
+                </section>
                 <p class="text-center text_mensagem">
                     Nenhum resultado achado para essa pesquisa!
                 </p>

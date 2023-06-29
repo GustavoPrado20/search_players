@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Repositories\UserRepository;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class ChatController extends Controller
@@ -21,14 +22,20 @@ class ChatController extends Controller
 
         $dados = UserRepository::all()->where('id', '!=', $id);
 
-        //return dd($dados);
-
         return view('chat.contatos-chat',["dados" => $dados, "dadosUsuario" => $dadosUsuario]);
     }
 
     public function pesquisar(Request $request)
     {
+        $id = auth()->user()->id;   
+        
+        $dadosUsuario = UserRepository::find($id);
 
+        $caracter = $request['caracter'];
+
+        $dados = User::where([['nome', 'like', '%'.$caracter.'%'],['id', '!=', $id]])->get(); //Recebendo dados conforme a busca do usuario
+
+        return view('chat.contatos-chat',["dados" => $dados, "dadosUsuario" => $dadosUsuario]);
     }
 
     public function chat()

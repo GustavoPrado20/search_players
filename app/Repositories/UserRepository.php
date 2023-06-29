@@ -16,4 +16,6 @@ class UserRepository extends AbstractRepository
         return self::loadModel()::query()->where(colum: ['email' => $email])->first();  
     }
 
+    
+
 }
