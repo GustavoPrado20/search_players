@@ -1,35 +1,35 @@
 <footer>
 	<section class="area_footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6">
+		<section class="container">
+			<section class="row">
+				<section class="col-md-6">
 					<h3 class="footer_title">Sugestões</h3>
 					<form name="sugestao" method="POST" action="#">
 						@csrf
 
-						<div class="form-grup">
+						<section class="form-grup">
 							<label for="nome" style="color:#100b25;">Nome</label>
 							<input id="Nome" class="form-control" disabled type="text" name="nome_sug" value = "{{ ucwords($dadosUsuario['nome']) }}">
-						</div>
+						</section>
 					
 					
-						<div class="form-grup">
+						<section class="form-grup">
 							<label for="email" style="color:#100b25;">Email</label>
 							<input class="form-control"  disabled type="text" name="email_sug" value="{{ $dadosUsuario['email'] }}">
-						</div>
+						</section>
 						
-						<div class="form-grup">	
+						<section class="form-grup">	
 							<label for="mensagem" style="color:#100b25;">Sugestão</label>
 							<textarea class="form-control" style="resize: none;;;;;" name="sugestao" rows="4" placeholder="Digite sua Sugestão" required="required"/></textarea>
-						</div>
+						</section>
 						<button class="btn btn-outline-light btn-lg mt-3 btn-block" type="submit" name="enviar_sugestao">Enviar</button>
 					</form>
-				</div>
+				</section>
 				<section>
-					<div class="modal fade" id="sucesso" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-					    <div class="modal-dialog">
-					    	<div class="modal-content">
-					      		<div class="modal-header">
+					<section class="modal fade" id="sucesso" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					    <section class="modal-dialog">
+					    	<section class="modal-content">
+					      		<section class="modal-header">
 					        		<h5 class="modal-title" id="exampleModalLabel">
 					        			@switch($dadosUsuario['sexo'])
 					        				@case('masculino')
@@ -44,35 +44,35 @@
 					        					Agradecemos a sua sugestão, iremos tentar atende-lx o mais rápido possível!
 					        			@endswitch
 					        		</h5>
-					     		</div>
-				     			<div class="modal-footer">
+					     		</section>
+				     			<section class="modal-footer">
 							        <a href=""><button type="button" class="btn btn-secondary">OK</button></a>
-							    </div>
-							</div>
-						</div>
-					</div>
+							    </section>
+							</section>
+						</section>
+					</section>
 				</section>
 				<section>
-					<div class="modal fade" id="falha" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-					    <div class="modal-dialog">
-					    	<div class="modal-content">
-					      		<div class="modal-header">
+					<section class="modal fade" id="falha" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					    <section class="modal-dialog">
+					    	<section class="modal-content">
+					      		<section class="modal-header">
 					        		<h5 class="modal-title" id="exampleModalLabel">Não foi possível enviar sua sugestão, tente novamente!</h5>
-					     		</div>
-				     			<div class="modal-footer">
+					     		</section>
+				     			<section class="modal-footer">
 							        <a href=""><button type="button" class="btn btn-secondary">OK</button></a>
-							    </div>
-							</div>
-						</div>
-					</div>
+							    </section>
+							</section>
+						</section>
+					</section>
 				</section>
                 
-				<div class="col-md-6">
+				<section class="col-md-6">
 					<h3 class="footer_title">Nossas Redes Sociais</h3>	
 						<section class="d-flex align-items-center flex-column">
-							<div class="mx-auto" style="width: 250px;">
-								<img class="redes_sociais" style="width: 250px;" src="./img/redes_sociais.svg">
-							</div>
+							<section class="mx-auto" style="width: 250px;">
+								<img class="redes_sociais" style="width: 250px;" src="{{asset('img/redes_sociais.svg')}}">
+							</section>
 						</section>	
 						<section class="text-center" style="margin-top: 25px;">
 							<a href="https://www.instagram.com/search_players/" target="_blank">
@@ -83,18 +83,18 @@
 								
 							</a>	
 						</section>		
-				</div>
-			</div>
-		</div>
+				</section>
+			</section>
+		</section>
 	</section>
 	<section class="area_copy">
-		<div class="container">
-			<div class="row">
+		<section class="container">
+			<section class="row">
 				<p class="col-md-12">
 					Copyright &copy; 2020 Search Players.
 				</p>
-			</div>
-		</div>
+			</section>
+		</section>
 	</section>
 </footer>
 

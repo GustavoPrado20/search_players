@@ -33,7 +33,8 @@ class HomeController extends Controller
         return view('home',['dadosUsuario' => $dadosUsuario]);
     }
 
-    public function destroy(Request $request){
+    public function destroy(Request $request)
+    {
         Auth::logout();
 
         $request->session()->invalidate();

@@ -80,7 +80,7 @@
 					<section class="box_min">
 						<span>
 							Não está cadastrado?
-							<a href="#" data-toggle="modal" data-target="#tipo-usuario">Clique aqui</a>
+							<a href="#" data-toggle="modal" data-target="#tipo-usuario" class = "link-cadastro">Clique aqui</a>
 						</span>
 					</section>
 				</section>

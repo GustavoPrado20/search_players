@@ -158,7 +158,7 @@
         <form class="search_box" name="pesquisar" method="POST" action="buscar.php">
 			@csrf
 		
-            <input class="search_txt" type="text" name="busca" placeholder="Pesquisar" required="required"/ value= @if(!empty($busca)) {{$busca}} @endif >
+            <input class="search_txt" type="text" name="busca" placeholder="Pesquisar" required="required"/ value= "{{ old('busca') }}">
             <button class="search_btn" type="submit" name="enviar">
 				<i class="fas fa-search"></i>
 			</button>
@@ -170,7 +170,7 @@
     <ul class="navbar-nav ml-md-auto">
         <!- Botão Chat -->
 		<li class="nav-item">
-			<a class="nav-link pl-2 pr-1 mx-1 py-3 my-n2" href="contatos_chat.php">
+			<a class="nav-link pl-2 pr-1 mx-1 py-3 my-n2" href="{{route('contatos')}}">
 				<i class="far fa-comment"></i>
 			</a>
 		</li>
@@ -184,7 +184,9 @@
 			</a>
 
 			<section class="dropdown-menu dropdown-menu-md-right" aria-labelledby="bell">
-				<section id="notificacoes"></section>
+				<section id="notificacoes">
+
+				</section>
 			</section>
 		</li>	
 

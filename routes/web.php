@@ -24,6 +24,15 @@ Route::get('/home', [Controllers\HomeController::class, 'Index'])->name('home');
 
 Route::get('/logout', [Controllers\HomeController::class, 'destroy'])->name('logout');
 
+Route::prefix('/conversas')->group(function(){
+    Route::get('/contatos', [Controllers\ChatController::class, 'index'])->name('contatos');
+    Route::get('/chat', [Controllers\ChatController::class, 'chat'])->name('chat');
+    Route::get('/chat_time', [Controllers\ChatController::class, 'chat_time'])->name('chat_time');
+
+    Route::get('/{$pesquisar}', [Controllers\ChatController::class, 'pesquisar'])->name('pesquisa_contato');
+});
+
+
 
 /*
 Route::prefix('/configuração')->group(function(){
@@ -46,16 +55,5 @@ Route::get('/campeonato', [Controllers\CampeonatoController::class, ''])->name('
 Route::get('/partidas', [Controllers\PartidaController::class, ''])->name('partidas');
 
 Route::get('/ranking', [Controllers\RankingController::class, ''])->name('ranking');
-
-Route::prefix('/conversa')->group(function(){
-    Route::get('/contatos', [Controllers\ChatController::class, ''])->name('contatos');
-    Route::get('/chat', [Controllers\ChatController::class, ''])->name('chat');
-    Route::get('/chat_time', [Controllers\ChatController::class, ''])->name('chat_time');
-});
-
-//Metodos POST
-Route::post('/registrar', [Controllers\IndexController::class, 'registrar'])->name('registrar');
-Route::post('/', [Controllers\IndexController::class, 'login'])->name('login');
 */
-
 Route::get('/termos', [Controllers\TermosController::class, ''])->name('termos');
