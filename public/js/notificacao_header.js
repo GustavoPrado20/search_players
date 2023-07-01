@@ -5,7 +5,7 @@ function ajax_notifica(){
             document.getElementById('notificacoes').innerHTML=req.responseText;
         }
     }
-    req.open('GET', 'functions_notifica.php', true);
+    req.open('GET', '', true);
     req.send();
 }
 

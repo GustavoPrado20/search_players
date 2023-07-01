@@ -12,6 +12,7 @@
                 <section class="modal-body">
                     <section class="container-fluid">	
                         <form name="filtrar" method="POST" action="filtrar_contatos.php">
+                            @csrf
                             <section class="form-group">
                                 <label for="tipo_usuario">
                                     Tipo de Usuárix

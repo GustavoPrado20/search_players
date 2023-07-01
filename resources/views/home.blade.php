@@ -1,5 +1,9 @@
 @extends('layouts.esqueleto')
 
+@section('estilos')
+    <link rel = "stylesheet" href = "{{asset('css/style_home.css')}}">
+@endsection
+
 @section('conteudo')
     <main class="principal">
         <section id="carouselhome" class="carousel slide" data-ride="carousel">

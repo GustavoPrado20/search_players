@@ -21,7 +21,7 @@ header{
 
 /* Hamburgue */
 
-.hamburguer{
+.hamburguer2{
 	width: 40px;
 	height: 40px;
 	border-radius: 10%;
@@ -31,7 +31,7 @@ header{
 	z-index: 999; 
 }
 
-.hamburguer:after{
+.hamburguer2:after{
 	content: '';
 	position: absolute;
 	top: 30%;
@@ -42,7 +42,7 @@ header{
 	background-color: #FF3C00;
 	transition: 1s ease;
 }
-.hamburguer:before{
+.hamburguer2:before{
 	content: '';
 	position: absolute;
 	top: 60%;
@@ -54,17 +54,17 @@ header{
 	transition: 1s ease;
 }
 
-#hamburguer:hover ~ label .hamburguer{
+#Hamburguer:hover ~ label .hamburguer2{
 	box-sizing: border-box;
 }
 
-#hamburguer:checked ~ label .hamburguer:after{
+#Hamburguer:checked ~ label .hamburguer2:after{
 	transform: rotate(225deg);
 	top: 45%;
 	left: 15%;
 }
 
-#hamburguer:checked ~ label .hamburguer:before{
+#Hamburguer:checked ~ label .hamburguer2:before{
 	transform: rotate(-225deg);
 	width: 70%;
 	height: 5px;
@@ -72,7 +72,7 @@ header{
 	left: 15%;
 }
 
-#hamburguer:checked ~ .menu{
+#Hamburguer:checked ~ .menu{
 	left: 0px;
 }
 

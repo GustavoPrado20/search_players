@@ -47,7 +47,7 @@
 
 							<section class="form-group">	
 								<label for="login"><h5>Email</h5></label>
-								<input id="login" class="form-control" name="email" type="text" placeholder="Informe seu Email" value = "{{ old('email') }}" autofocus/>
+								<input id="login" class="form-control" name="email" type="text" placeholder="Informe seu Email" value = "{{ old('email') }}" autofocus autocomplete = "on"/>
 								<span class='erro-validacao2 template msg-emaill'>
 									@error('email')
 										{{ $message }}
@@ -60,7 +60,7 @@
 							</section>
 
 							<section class="form-group">
-								<label for="senha"><h5>Senha</h5></label>
+								<label for="senhal"><h5>Senha</h5></label>
 								<input id="senhal" class="form-control" name="password" type="password" value = "{{ old('password') }}" placeholder="******"/>
 								<span class='erro-validacao2 template msg-senhal'>
 									@error('password')
@@ -122,7 +122,7 @@
 									<label for="email">
 										Email
 									</label>
-									<input class="form-control" id="email" type="text" name="email" placeholder="Email" value = "{{ old('email') }}" />
+									<input class="form-control" id="email" type="text" name="email" placeholder="Email" value = "{{ old('email') }}" autocomplete = "on" />
 									<span class='erro-validacao template msg-Email'>
 										@error('email')
 											{{ $message }}
@@ -140,7 +140,7 @@
 								</section>
 
 								<section class="form-group">
-									<label for="c_senha">
+									<label for="senha2">
 										Confirme a Senha
 									</label>
 									<input class="form-control" id="senha2" type="password" name="password_confirmation" value = "{{ old('password_confirmation') }}" placeholder="Confirme a Senha"/>

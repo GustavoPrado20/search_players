@@ -1,5 +1,10 @@
 @extends('layouts.esqueleto');
 
+@section('estilos')
+    <link rel = "stylesheet" href = "{{asset('css/style_chat.css')}}">
+    <link rel = "stylesheet" href = "{{asset('css/style_meutime.css')}}">
+@endsection
+
 @section('conteudo')
     <main>
         @include('layouts.botao-pesquisar')
@@ -12,15 +17,16 @@
                     <section class="row no-gutters">
                         <section class="col-md-4">
                             <figure class="d-flex align-content-center mx-auto" style="width: 150px;">
-                                @empty($dado['foto']) <!- imagem caso o Usuario nao tenha adicionado nenhuma foto de perfil | Imaem padrao so sistema -->
+                                @if(empty($dado['foto'])) <!- imagem caso o Usuario nao tenha adicionado nenhuma foto de perfil | Imaem padrao so sistema -->
                                     @if(empty($dado['sexo']) || $dado['sexo'] == 'masculino' || null)
                                         <img class = "user_img" src = "{{asset('img/foto_perfis/user_m.svg')}}" alt = "Imagem Usuario">
                                     @else
                                         <img class = "user_img" src = "{{asset('img/foto_perfis/user_f.svg')}}" alt = "Imagem Usuaria">
                                     @endif
-                                @endempty
-                                <!- Foto de perfil adicionada pelo Usuario -->
-                                <img class = "user_img" src = "{{asset('img/foto_perfis/'.$dado['foto'])}}" alt = "Imagem Usuario">
+                                @else
+                                    <!- Foto de perfil adicionada pelo Usuario -->
+                                    <img class = "user_img" src = "{{asset('img/foto_perfis/'.$dado['foto'])}}" alt = "Imagem Usuario">
+                                @endif
                             </figure>
 	    				</section>
 	  					<section class="col-md-8">
@@ -77,7 +83,8 @@
                                     @endswitch
                                     </p>
                                 @endif
-                                <form method="POST" action="registro_chat.php">
+                                <form method="GET" action="{{route('chat')}}">
+                                    @csrf
                                     <input type="hidden" name="id_destino" value = "{{$dado['id']}}">
                                     <input type="submit" name="conversar" value="Conversar" style="background-color:#ff3c00;" class="btn btn-danger">
                                 </form>

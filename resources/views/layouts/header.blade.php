@@ -6,160 +6,161 @@
 
     <!- inicio menu hamburguer ->
     <section class = "itens_1">
+		<form>
+			<input type = "checkbox" id = "Hamburguer" style = "display: none;">
+			<label for = "Hamburguer">
+				<section class = "hamburguer2">
+				</section>
+			</label>
 
-        <input type = "checkbox" id = "hamburguer" style = "display: none;">
-        <label for = "hamburguer">
-            <section class = "hamburguer">
-            </section>
-        </label>
+			<nav class = "menu scrollbar-warning">
+				<ul class = "menu_list">
+					<!- Foto de perfil do Usuario -->
+					<li class = "menu_item_perfil border-bottom border-white">
+						<a href = "perfil.php">
+							<figure>
+								@if (empty($dadosUsuario['foto'])) <!- imagem caso o Usuario nao tenha adicionado nenhuma foto de perfil | Imaem padrao so sistema -->
+									@if (empty($dadosUsuario['sexo']) || $dadosUsuario['sexo'] == "masculino")
+										<img class = "user_img" src = "{{asset('img/foto_perfis/user_m.svg')}}" alt = "Imagem Usuario">
+									@else
+										<img class = "user_img" src = "{{asset('img/foto_perfis/user_f.svg')}}" alt = "Imagem Usuaria">
+									@endif
+								@else <!- Foto de perfil adicionada pelo Usuario -->
+									<img class = "user_img" src = "{{asset('img/foto_perfis/'.$dadosUsuario['foto'])}}" alt = "Imagem Usuario">
+								@endif
+							</figure>
+						</a>
 
-        <nav class = "menu scrollbar-warning">
-            <ul class = "menu_list">
-                <!- Foto de perfil do Usuario -->
-                <li class = "menu_item_perfil border-bottom border-white">
-                    <a href = "perfil.php">
-                        <figure>
-                            @if (empty($dadosUsuario['foto'])) <!- imagem caso o Usuario nao tenha adicionado nenhuma foto de perfil | Imaem padrao so sistema -->
-                                @if (empty($dadosUsuario['sexo']) || $dadosUsuario['sexo'] == "masculino")
-                                    <img class = "user_img" src = "{{asset('img/foto_perfis/user_m.svg')}}" alt = "Imagem Usuario">
-                                @else
-                                    <img class = "user_img" src = "{{asset('img/foto_perfis/user_f.svg')}}" alt = "Imagem Usuaria">
-                                @endif
-                            @else <!- Foto de perfil adicionada pelo Usuario -->
-                                 <img class = "user_img" src = "{{asset('img/foto_perfis/'.$dadosUsuario['foto'])}}" alt = "Imagem Usuario">
-                            @endif
-                        </figure>
-                    </a>
+						<!- Nome do Usuario -->
+						<a class = "menu_link_perfil" href = "perfil.php">
+							<h4>
+								{{ ucwords($dadosUsuario['nome']); }}
+							</h4>
+						</a>
+					</li>
+					
+					<!- inicio da navegação do menu -->
+					<li class = "menu_item">
+						<a class="menu_link" href="{{route('home')}}">
+							<i class = "menu_icon fas fa-home"></i>
+							Home
+						</a>
+					</li>
 
-                    <!- Nome do Usuario -->
-                    <a class = "menu_link_perfil" href = "perfil.php">
-                        <h4>
-							{{ ucwords($dadosUsuario['nome']); }}
-                        </h4>
-                    </a>
-                </li>
-                
-                <!- inicio da navegação do menu -->
-                <li class = "menu_item">
-                    <a class="menu_link" href="home.php">
-                        <i class = "menu_icon fas fa-home"></i>
-                        Home
-                    </a>
-                </li>
+					@switch($dadosUsuario['tipo_usuario'])
+						@case('jogador')
+							<li class="menu_item">
+								<a class="menu_link" href="meus_times.php">
+									<i class="menu_icon fas fa-users"></i>
+									Meus times
+								</a>
+							</li>
 
-                @switch($dadosUsuario['tipo_usuario'])
-                    @case('jogador')
-                        <li class="menu_item">
-							<a class="menu_link" href="meus_times.php">
-								<i class="menu_icon fas fa-users"></i>
-								Meus times
-							</a>
-						</li>
+							<li class="menu_item">
+								<a class="menu_link" href="times.php">
+									<i class="menu_icon fas fa-users"></i>
+									Times
+								</a>
+							</li>
 
+							<li class="menu_item">
+								<a class="menu_link" href="partidas.php">
+									<i class="menu_icon fas fa-futbol"></i>
+									Partidas
+								</a>
+							</li>
+
+							<li class="menu_item">
+								<a class="menu_link" href="camp.php">
+									<i class="menu_icon fas fa-trophy"></i>
+									Campeonatos
+								</a>
+							</li>
+
+							<li class="menu_item">
+								<a class="menu_link" href="rank_jogadores.php">
+									<i class="menu_icon fas fa-award"></i>
+									Ranking
+								</a>
+							</li>
+						@break
+
+						@case('administrador_time')
+							<li class="menu_item">
+								<a class="menu_link" href="meu_time.php">
+									<i class="menu_icon fas fa-users"></i>
+									Meu time
+								</a>
+							</li>
+
+							<li class="menu_item">
+								<a class="menu_link" href="times.php">
+									<i class="menu_icon fas fa-users"></i>
+									Times
+								</a>
+							</li>
+
+							<li class="menu_item">
+								<a class="menu_link" href="jogadores.php">
+									<i class="menu_icon fas fa-user"></i>
+									Jogadores
+								</a>
+							</li>
+
+							<li class="menu_item">
+								<a class="menu_link" href="partidas.php">
+									<i class="menu_icon fas fa-futbol"></i>
+									Partidas
+								</a>
+							</li>
+
+							<li class="menu_item">
+								<a class="menu_link" href="camp.php">
+									<i class="menu_icon fas fa-trophy"></i>
+									Campeonatos
+								</a>
+							</li>
+
+							<li class="menu_item">
+								<a class="menu_link" href="rank_times.php">
+									<i class="menu_icon fas fa-award"></i>
+									Ranking
+								</a>
+							</li>
+						@break
+
+						@default
 						<li class="menu_item">
-							<a class="menu_link" href="times.php">
-								<i class="menu_icon fas fa-users"></i>
-								Times
-							</a>
-						</li>
+								<a class="menu_link" href="partidas.php">
+									<i class="menu_icon fas fa-futbol"></i>
+									Partidas
+								</a>
+							</li>
 
-						<li class="menu_item">
-							<a class="menu_link" href="partidas.php">
-								<i class="menu_icon fas fa-futbol"></i>
-								Partidas
-							</a>
-						</li>
+							<li class="menu_item">
+								<a class="menu_link" href="camp.php">
+									<i class="menu_icon fas fa-trophy"></i>
+									Campeonatos
+								</a>
+							</li>
 
-						<li class="menu_item">
-							<a class="menu_link" href="camp.php">
-								<i class="menu_icon fas fa-trophy"></i>
-								Campeonatos
-							</a>
-						</li>
-
-						<li class="menu_item">
-							<a class="menu_link" href="rank_jogadores.php">
-								<i class="menu_icon fas fa-award"></i>
-								Ranking
-							</a>
-						</li>
-                    @break
-
-                    @case('administrador_time')
-                        <li class="menu_item">
-							<a class="menu_link" href="meu_time.php">
-								<i class="menu_icon fas fa-users"></i>
-								Meu time
-							</a>
-						</li>
-
-						<li class="menu_item">
-							<a class="menu_link" href="times.php">
-								<i class="menu_icon fas fa-users"></i>
-								Times
-							</a>
-						</li>
-
-						<li class="menu_item">
-							<a class="menu_link" href="jogadores.php">
-								<i class="menu_icon fas fa-user"></i>
-								Jogadores
-							</a>
-						</li>
-
-						<li class="menu_item">
-							<a class="menu_link" href="partidas.php">
-								<i class="menu_icon fas fa-futbol"></i>
-								Partidas
-							</a>
-						</li>
-
-						<li class="menu_item">
-							<a class="menu_link" href="camp.php">
-								<i class="menu_icon fas fa-trophy"></i>
-								Campeonatos
-							</a>
-						</li>
-
-						<li class="menu_item">
-							<a class="menu_link" href="rank_times.php">
-								<i class="menu_icon fas fa-award"></i>
-								Ranking
-							</a>
-						</li>
-                    @break
-
-                    @default
-                    <li class="menu_item">
-							<a class="menu_link" href="partidas.php">
-								<i class="menu_icon fas fa-futbol"></i>
-								Partidas
-							</a>
-						</li>
-
-						<li class="menu_item">
-							<a class="menu_link" href="camp.php">
-								<i class="menu_icon fas fa-trophy"></i>
-								Campeonatos
-							</a>
-						</li>
-
-						<li class="menu_item">
-							<a class="menu_link" href="rank_times.php">
-								<i class="menu_icon fas fa-award"></i>
-								Ranking
-							</a>
-						</li>
-                @endswitch               
-            </ul>
-        </nav>
+							<li class="menu_item">
+								<a class="menu_link" href="rank_times.php">
+									<i class="menu_icon fas fa-award"></i>
+									Ranking
+								</a>
+							</li>
+					@endswitch               
+				</ul>
+			</nav>
+		</form>
 
         <!- inicio pesquisar -->
         <form class="search_box" name="pesquisar" method="POST" action="buscar.php">
 			@csrf
 		
             <input class="search_txt" type="text" name="busca" placeholder="Pesquisar" required="required"/ value= "{{ old('busca') }}">
-            <button class="search_btn" type="submit" name="enviar">
+            <button class="search_btn" type="submit" name="enviar_busca">
 				<i class="fas fa-search"></i>
 			</button>
         </form>

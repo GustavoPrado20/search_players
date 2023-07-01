@@ -4,33 +4,33 @@
 			<section class="row">
 				<section class="col-md-6">
 					<h3 class="footer_title">Sugestões</h3>
-					<form name="sugestao" method="POST" action="#">
+					<form name="sugestao_form" method="POST" action="#">
 						@csrf
 
 						<section class="form-grup">
 							<label for="nome" style="color:#100b25;">Nome</label>
-							<input id="Nome" class="form-control" disabled type="text" name="nome_sug" value = "{{ ucwords($dadosUsuario['nome']) }}">
+							<input id = "nome" class="form-control" disabled type="text" name="nome" value = "{{ ucwords($dadosUsuario['nome']) }}" autocomplete = "on">
 						</section>
 					
 					
 						<section class="form-grup">
 							<label for="email" style="color:#100b25;">Email</label>
-							<input class="form-control"  disabled type="text" name="email_sug" value="{{ $dadosUsuario['email'] }}">
+							<input id = "email" class="form-control"  disabled type="text" name="email" value="{{ $dadosUsuario['email'] }}" autocomplete = "on">
 						</section>
 						
 						<section class="form-grup">	
-							<label for="mensagem" style="color:#100b25;">Sugestão</label>
-							<textarea class="form-control" style="resize: none;;;;;" name="sugestao" rows="4" placeholder="Digite sua Sugestão" required="required"/></textarea>
+							<label for="sugestao" style="color:#100b25;">Sugestão</label>
+							<textarea id = "sugestao" class="form-control" style="resize: none;;;;;" name="sugestao" rows="4" placeholder="Digite sua Sugestão" required="required"/></textarea>
 						</section>
 						<button class="btn btn-outline-light btn-lg mt-3 btn-block" type="submit" name="enviar_sugestao">Enviar</button>
 					</form>
 				</section>
 				<section>
-					<section class="modal fade" id="sucesso" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<section class="modal fade" id="sucesso" tabindex="-1" aria-labelledby="exampleModalLabelC" aria-hidden="true">
 					    <section class="modal-dialog">
 					    	<section class="modal-content">
 					      		<section class="modal-header">
-					        		<h5 class="modal-title" id="exampleModalLabel">
+					        		<h5 class="modal-title" id="exampleModalLabelC">
 					        			@switch($dadosUsuario['sexo'])
 					        				@case('masculino')
 					        					Agradecemos a sua sugestão, iremos tentar atende-lo o mais rápido possível!

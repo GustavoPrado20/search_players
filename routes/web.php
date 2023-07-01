@@ -26,10 +26,15 @@ Route::get('/logout', [Controllers\HomeController::class, 'destroy'])->name('log
 
 Route::prefix('/conversas')->group(function(){
     Route::get('/contatos', [Controllers\ChatController::class, 'index'])->name('contatos');
+
     Route::get('/chat', [Controllers\ChatController::class, 'chat'])->name('chat');
+    Route::post('/chat', [Controllers\ChatController::class, 'registro_chat'])->name('registro_chat');
+    
     Route::get('/chat_time', [Controllers\ChatController::class, 'chat_time'])->name('chat_time');
 
     Route::get('/pesquisa', [Controllers\ChatController::class, 'pesquisar'])->name('pesquisa_contato');
+    
+    Route::get('/dados', [Controllers\ChatController::class, 'dados_chat'])->name('dados_chat');
 });
 
 
