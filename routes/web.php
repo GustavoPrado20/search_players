@@ -33,8 +33,10 @@ Route::prefix('/conversas')->group(function(){
     Route::get('/chat_time', [Controllers\ChatController::class, 'chat_time'])->name('chat_time');
 
     Route::get('/pesquisa', [Controllers\ChatController::class, 'pesquisar'])->name('pesquisa_contato');
-    
+
     Route::get('/dados', [Controllers\ChatController::class, 'dados_chat'])->name('dados_chat');
+
+    Route::get('/contatos/filtro', [Controllers\ChatController::class, 'filtro_contato'])->name('filtro_contato');
 });
 
 

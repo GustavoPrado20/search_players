@@ -11,28 +11,28 @@
                 </section>
                 <section class="modal-body">
                     <section class="container-fluid">	
-                        <form name="filtrar" method="POST" action="filtrar_contatos.php">
+                        <form name="filtrar" method="GET" action="{{route('filtro_contato')}}">
                             @csrf
                             <section class="form-group">
                                 <label for="tipo_usuario">
                                     Tipo de Usuárix
                                 </label>
-                                <select class="custom-select" name="tipo_usuario" required="required"/>
+                                <select id = "tipo_usuario" class="custom-select" name="tipo_usuario" required="required"/>
                                     <option value="" ></option>
-                                    <option value="1">Jogadorx de Aluguel</option>
-                                    <option value="2">Administradorx de Um Time</option>
-                                    <option value="3">Analisadorx de Partidas</option>
+                                    <option value="jogador">Jogadorx de Aluguel</option>
+                                    <option value="administrador_time">Administradorx de Um Time</option>
+                                    <option value="analisador">Analisadorx de Partidas</option>
                                 </select>
                             </section>
                             <section class="form-group">
                                 <label for="esporte_usuario">
                                     Esporte
                                 </label>
-                                <select class="custom-select" name="esporte_usuario" required="required"/>
+                                <select id = "esporte_usuario" class="custom-select" name="esporte" required="required"/>
                                     <option value=""></option>
-                                    <option value="1">Futebol</option>
-                                    <option value="2">Basquete</option>
-                                    <option value="3">Vôlei</option>
+                                    <option value="futebol">Futebol</option>
+                                    <option value="basquete">Basquete</option>
+                                    <option value="volei">Vôlei</option>
                                     <option value="NULL">Indefinido</option>
                                 </select>
                             </section>
@@ -40,10 +40,10 @@
                                 <label for="sexo">
                                     Sexo
                                 </label>
-                                <select class="custom-select" name="sexo" required="required"/>
+                                <select id = "sexo" class="custom-select" name="sexo" required="required"/>
                                     <option value=""></option>
-                                    <option value="1">Masculino</option>
-                                    <option value="2">Feminino</option>
+                                    <option value="masculino">Masculino</option>
+                                    <option value="femenino">Feminino</option>
                                     <option value="NULL">Indefinido</option>
                                 </select>
                             </section>

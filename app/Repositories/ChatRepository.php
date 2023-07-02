@@ -22,10 +22,4 @@ class ChatRepository extends AbstractRepository
 
         return [$registro1, $registro2];
     }
-
-    public static function formatarData($data){
-        setlocale(LC_TIME, 'pt_BR.UTF-8', 'pt_BR.UTF-8', 'pt_BR.UTF-8', 'portuguese');
-        date_default_timezone_set('America/Sao_Paulo');
-        return strftime('%H:%M', strtotime($data));
-    }
 }

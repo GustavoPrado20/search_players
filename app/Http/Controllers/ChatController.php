@@ -45,6 +45,8 @@ class ChatController extends Controller
         $id_usuario = auth()->user()->id;
         $id_destino = intval($request['id_destino']);
 
+        session()->put('id_destino', $id_destino);
+
         $dadosUsuario = UserRepository::find($id_usuario);
         $dadosDestino = UserRepository::find($id_destino);
 
@@ -55,8 +57,6 @@ class ChatController extends Controller
     {
         $id_usuario = auth()->user()->id;
         $id_destino = $request['id_destino'];
-
-        session()->put('id_destino', intval($id_destino));
 
         $dadosUsuario = UserRepository::find($id_usuario);
         $dadosDestino = UserRepository::find($id_destino);
@@ -83,6 +83,19 @@ class ChatController extends Controller
         $mensagens = chat::where('registro_conversa', '=', $registro[0])->orWhere('registro_conversa', '=', $registro[1])->orderBy('id')->get();
 
         return view('chat.dados_chat', ["mensagens" => $mensagens, "registro_conversa1" => $registro[0], "registro_conversa2" => $registro[1]]);
+    }
+
+    public function filtro_contato(Request $request)
+    {
+        $id = auth()->user()->id;   
+        
+        $dadosUsuario = UserRepository::find($id);
+
+        $filtro = $request->all();
+
+        $dados = User::where([['id', '!=', $id], ['tipo_usuario', '=', $filtro['tipo_usuario']], ['esporte', '=', $filtro['esporte']], ['sexo', '=', $filtro['sexo']]])->get(); //Recebendo dados conforme o filtro do usuario
+
+        return view('chat.contatos-chat',["dados" => $dados, "dadosUsuario" => $dadosUsuario]);
     }
 
 }
