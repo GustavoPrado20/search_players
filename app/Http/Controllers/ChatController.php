@@ -98,4 +98,17 @@ class ChatController extends Controller
         return view('chat.contatos-chat',["dados" => $dados, "dadosUsuario" => $dadosUsuario]);
     }
 
+    public function delete_mensagem($id)
+    {
+        $id_destino = session()->get('id_destino');
+        $id_usuario = auth()->user()->id;
+
+        $dadosUsuario = UserRepository::find($id_usuario);
+        $dadosDestino = UserRepository::find($id_destino);
+
+        ChatRepository::delete($id);
+
+        return redirect()->route('chat', ["dadosUsuario" => $dadosUsuario, "dadosDestino" => $dadosDestino, "id_destino" => $id_destino]);
+    }
+
 }

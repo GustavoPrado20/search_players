@@ -26,7 +26,7 @@
 
                     <section class = "container_hora">
                         <span>
-                            <a href = "apagar_mensagem.php?id_mensagem={{$mensagem['id']}}">&times;</a>
+                            <a href = "{{route('delete-mensagem',['id' => $mensagem['id']])}}">&times;</a>
                         </span>
                         <time class = "hora">
                             {{ $hora }}
@@ -53,7 +53,7 @@
                     
                     <section class = "container_hora">
                         <span>
-                            <a href = "apagar_mensagem.php?id_mensagem={{$mensagem['id']}}">&times;</a>
+                            <a href = "{{route('delete-mensagem',['id' => $mensagem['id']])}}">&times;</a>
                         </span>
                         <time class = "hora">
                             {{ $hora }}
