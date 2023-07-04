@@ -17,7 +17,7 @@
 				<ul class = "menu_list">
 					<!- Foto de perfil do Usuario -->
 					<li class = "menu_item_perfil border-bottom border-white">
-						<a href = "perfil.php">
+						<a href = "{{route('perfil')}}">
 							<figure>
 								@if (empty($dadosUsuario['foto'])) <!- imagem caso o Usuario nao tenha adicionado nenhuma foto de perfil | Imaem padrao so sistema -->
 									@if (empty($dadosUsuario['sexo']) || $dadosUsuario['sexo'] == "masculino")
