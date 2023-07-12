@@ -15,11 +15,11 @@ use App\Http\Controllers;
 */
 
 Route::get('/', [Controllers\IndexController::class, 'Index'])->name('index');
-Route::post('/', [Controllers\IndexController::class, 'logar'])->name('logar');
+Route::post('/logar', [Controllers\IndexController::class, 'logar'])->name('logar');
 Route::post('/registrar', [Controllers\IndexController::class, 'registrar'])->name('registrar-usuario');
 
 Route::get('/home', [Controllers\HomeController::class, 'Index'])->name('home');
-
+Route::get('/notificacao', [Controllers\HomeController::class, 'notificacao'])->name('functions_notificacao');
 Route::get('/logout', [Controllers\HomeController::class, 'destroy'])->name('logout');
 
 Route::prefix('/conversas')->group(function(){
@@ -39,15 +39,14 @@ Route::prefix('/conversas')->group(function(){
 
 Route::get('/perfil', [Controllers\PerfilController::class, 'index'])->name('perfil');
 
-
+Route::prefix('/configuração')->group(function(){
+    Route::get('/perfil', [Controllers\ConfiguracaoPerfilController::class, 'index'])->name('config_perfil');
+});
 
 /*
-Route::prefix('/configuração')->group(function(){
-    Route::get('/perfil', [Controllers\ConfiguracaoController::class, 'config_perfil'])->name('config_perfil');
-    Route::get('/conta', [Controllers\ConfiguracaoController::class, 'config_conta'])->name('config_conta');
-    Route::get('/localização', [Controllers\ConfiguracaoController::class, 'config_localizacao'])->name('config_localizacao');
-    Route::get('/time', [Controllers\ConfiguracaoController::class, 'config_time'])->name('config_time');
-});
+Route::get('/conta', [Controllers\ConfiguracaoController::class, 'config_conta'])->name('config_conta');
+Route::get('/localização', [Controllers\ConfiguracaoController::class, 'config_localizacao'])->name('config_localizacao');
+Route::get('/time', [Controllers\ConfiguracaoController::class, 'config_time'])->name('config_time');
 
 Route::get('/times', [Controllers\TimeController::class, ''])->name('times');
 

@@ -28,7 +28,7 @@ class PerfilController extends Controller
         
         $dataDeNascimento = $dadosUsuario['data_nascimento'];
         $date = new DateTime($dataDeNascimento);
-        $interval = $date->diff( new DateTime( date('Y-m-d') ) );
+        $interval = $date->diff( new DateTime( date('d-m-Y') ) );
 
         return view('perfil', ['dadosUsuario' => $dadosUsuario, 'endereco' => $endereco, 'times' => $times, 'data' => $interval]);
     }

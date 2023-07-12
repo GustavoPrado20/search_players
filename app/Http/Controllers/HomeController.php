@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\NotificaRepository;
 use Illuminate\Http\Request;
 use App\Repositories\UserRepository;
-use App\Http\Requests\StoreIndexRequest;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -31,6 +31,20 @@ class HomeController extends Controller
         $dadosUsuario = UserRepository::find($id);
 
         return view('home',['dadosUsuario' => $dadosUsuario]);
+    }
+
+    public function notificacao(){
+        $id = auth()->user()->id;
+        
+        $notificacao = NotificaRepository::findByIdDestino($id);
+
+        if($notificacao->count() > 0){
+            return '<a class = "dropdown-item" href = "'.$notificacao['link'].'">'.$notificacao['notificacao'].'</a>';
+        }
+        else{
+            return '<span class = "dropdown-item">Sem Notificação</span>';
+        }
+
     }
 
     public function destroy(Request $request)

@@ -2,6 +2,8 @@
 
 @section('estilos')
     <link rel="stylesheet" href="{{ asset('css/style_perfil.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style_meutime.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style_home.css') }}">
 @endsection
 
 @section('conteudo')
@@ -18,12 +20,13 @@
         <section class="d-flex align-items-center flex-column">
             <section class="container" style="width : 820px">
                 <figure>
-                    @empty($dadosUsuario['banner'])
+                    @if(empty($dadosUsuario['banner']))
                         <img class="banner d-block" src="{{ asset('img/banners_perfis/banner_usuario.jpeg') }}"
                             alt="Banner do Usuário">
-                    @endempty
-                    <img class="banner d-block" src="{{ asset('img/banners_perfis/' . $dadosUsuario['banner']) }}"
-                        alt="Banner do Usuário">
+                    @else
+                        <img class="banner d-block" src="{{ asset('img/banners_perfis/' . $dadosUsuario['banner']) }}"
+                            alt="Banner do Usuário">
+                    @endif
                 </figure>
 
                 <section class="row">

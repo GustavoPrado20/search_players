@@ -32,7 +32,7 @@
 						</a>
 
 						<!- Nome do Usuario -->
-						<a class = "menu_link_perfil" href = "perfil.php">
+						<a class = "menu_link_perfil" href = "{{route('perfil')}}">
 							<h4>
 								{{ ucwords($dadosUsuario['nome']); }}
 							</h4>
@@ -199,7 +199,7 @@
 
 			<section class="dropdown-menu dropdown-menu-md-right" aria-labelledby="config">
 				<a class="dropdown-item" href="config_perfil.php">Configurações</a>
-				<a class="dropdown-item" href="perfil.php">Perfil</a>
+				<a class="dropdown-item" href="{{route('perfil')}}">Perfil</a>
 				<a class="dropdown-item" href="{{ Route('logout') }}">Sair</a>
 			</section>
 		</li>
