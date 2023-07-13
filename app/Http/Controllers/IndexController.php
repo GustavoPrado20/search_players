@@ -41,7 +41,7 @@ class IndexController extends Controller
             return redirect()->intended('home');
         }
         else{
-            $erroLogin = 'Email ou Senha Incorretos!!!';
+            $erroLogin = 'Email ou Senha Incorretos!';
             return view('index',['erroLogin' => $erroLogin]);
         }
         

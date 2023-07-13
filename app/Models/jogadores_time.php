@@ -20,6 +20,6 @@ class jogadores_time extends Model
 
     //revertendo a relacao com a model User
     public function User(){
-        return $this->belongsToMany(related: User::class, foreignKey: 'id_jogador', ownerKey: 'id');
+        return $this->belongsToMany(User::class, 'id_jogador', 'id');
     }
 }

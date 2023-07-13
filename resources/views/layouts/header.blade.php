@@ -26,7 +26,7 @@
 										<img class = "user_img" src = "{{asset('img/foto_perfis/user_f.svg')}}" alt = "Imagem Usuaria">
 									@endif
 								@else <!- Foto de perfil adicionada pelo Usuario -->
-									<img class = "user_img" src = "{{asset('img/foto_perfis/'.$dadosUsuario['foto'])}}" alt = "Imagem Usuario">
+									<img class = "user_img rounded-circle" src = "{{asset('img/foto_perfis/'.$dadosUsuario['foto'])}}" alt = "Imagem Usuario">
 								@endif
 							</figure>
 						</a>
@@ -198,9 +198,9 @@
 			</a>
 
 			<section class="dropdown-menu dropdown-menu-md-right" aria-labelledby="config">
-				<a class="dropdown-item" href="config_perfil.php">Configurações</a>
+				<a class="dropdown-item" href="{{route('config_perfil')}}">Configurações</a>
 				<a class="dropdown-item" href="{{route('perfil')}}">Perfil</a>
-				<a class="dropdown-item" href="{{ Route('logout') }}">Sair</a>
+				<a class="dropdown-item" href="{{route('logout')}}">Sair</a>
 			</section>
 		</li>
 	</ul>

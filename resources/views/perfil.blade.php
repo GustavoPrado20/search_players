@@ -48,7 +48,7 @@
 
                         <h3 class="titulo">
                             {{ ucwords($dadosUsuario['nome']) }}
-                            <a class="icon" href="config_perfil.php">
+                            <a class="icon" href="{{route('config_perfil')}}">
                                 <i class="fas fa-pencil-alt"></i>
                             </a>
                         </h3>

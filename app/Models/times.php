@@ -49,6 +49,6 @@ class times extends Model
 
     //relacionamento com a model chat_time
     public function chat_time(){
-        return $this->hasMany(related: chat_time::class, foreigKey: 'id_time', localKey: 'id');
+        return $this->hasMany(related: chat_time::class, foreignKey: 'id_time', localKey: 'id');
     }
 }

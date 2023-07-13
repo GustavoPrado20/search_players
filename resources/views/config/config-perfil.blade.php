@@ -2,27 +2,27 @@
 
 @section('estilos')
     <link rel="stylesheet" href="{{asset('css/style_home.css')}}">
-    <link rel="stylesheet" href="{{asset('css/config.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style_config.css')}}">
 @endsection
 
 @section('conteudo')
     <main>
-        <div class="container">
-			<div class="row">
+        <section class="container">
+			<section class="row">
 				@include('config.layouts.nav-config')
 
 				<section class="col-md-9">
 					<h1 class="text-title">Editar Perfil</h1>
 					<p class="text">As seguintes informações estaram amostra em seu perfil para outros usuários</p>
-					<form name="editar" method="POST" action="#" id="altera_form" enctype="multipart/form-data">
-
-						<div class="form-group">
-							<div class="input-group mb-3">
-								<div class="custom-file">
-									<input type="file" class="custom-file-input" id="foto" name="foto" aria-describedby="inputGroupFileAddon03">
+					<form name="editar" method="POST" action="{{route('config_update_perfil')}}" id="altera_form" enctype="multipart/form-data">
+						@csrf
+						<section class="form-group">
+							<section class="input-group mb-3">
+								<section class="custom-file">
+									<input type="file" class="custom-file-input" id="foto" name="foto" aria-describedby="inputGroupFileAddon03" accept="image/*">
 									<label class="custom-file-label" for="foto">Adicione uma foto de perfil</label>
-									</div>
-							</div>
+								</section>
+							</section>
 
 							<figure>
 								@if(empty($dadosUsuario['foto']))
@@ -31,8 +31,9 @@
 									@else
 										<img class="foto_media" src="{{ asset('img/foto_perfis/user_f.svg') }}" alt="Imagem do Usuário">
 									@endif
+								@else
+									<img class="foto_media rounded-circle" src="{{ asset('img/foto_perfis/'.$dadosUsuario['foto']) }}" alt="Imagem do usuário">
 								@endif
-								<img class="foto_media rounded-circle" src="{{ asset('img/foto_perfis/'.$dadosUsuario['foto']) }}" alt="Imagem do usuário">
 							</figure>
 
 							@if(!empty($dadosUsuario['foto']))
@@ -42,15 +43,15 @@
 									</button>
 								</a>
 							@endif
-						</div>
+						</section>
 
-						<div class="form-group">
-							<div class="input-group mb-3">
-								<div class="custom-file">
-									<input type="file" name="banner" class="custom-file-input" id="banner" name="foto" aria-describedby="inputGroupFileAddon03">
+						<section class="form-group">
+							<section class="input-group mb-3">
+								<section class="custom-file">
+									<input type="file" name="banner" class="custom-file-input" id="banner" aria-describedby="inputGroupFileAddon03" accept="image/*">
 									<label class="custom-file-label" for="banner">Adicione um banner</label>
-									</div>
-							</div>
+								</section>
+							</section>
 							<figure>
 								@if(empty($dadosUsuario['banner']))
 									<img class="banner d-block" src="{{ asset('img/banners_perfis/banner_usuario.jpeg') }}" alt="Banner do Usuário">
@@ -66,49 +67,49 @@
 									</button>
 								</a>
 							@endif
-						</div>
+						</section>
 
-						<div class="form-group row">
-							<div class="col-md-6">
-								<label for="nome">
+						<section class="form-group row">
+							<section class="col-md-6">
+								<label for="nomeU">
 									Nome
 								</label>
-								<input class="form-control" type="text" name="nome" value="{{ ucwords($dadosUsuario['nome'])}}">
-							</div>
-						</div>
+								<input class="form-control" id="nomeU" type="text" name="nome" value="{{ ucwords($dadosUsuario['nome'])}}" require>
+							</section>
+						</section>
 
-						<div class="form-group">
+						<section class="form-group">
 							<label for="status">
-								Status
+								Sobre
 							</label>
-							<textarea class="form-control" style="resize: none" id="status" name="sobre" row="3">{{ $dadosUsuario['sobre'] }}</textarea>
-						</div>
-						<div class="form-group row">
-							<div class="col-md-6">
+							<textarea class="form-control" id="status" style="resize: none" id="status" name="sobre" row="3">{{ $dadosUsuario['sobre'] }}</textarea>
+						</section>
+						<section class="form-group row">
+							<section class="col-md-6">
 								<label for="site">
 									Site
 								</label>
 								<input class="form-control" type="text" name="site" id="site" value="{{ $dadosUsuario['site'] }}">
-							</div>
-							<div class="col-md-6">
+							</section>
+							<section class="col-md-6">
 								<label for="esporte">
 									Esporte 
 								</label>
-								@if(!empty($time) or !empty($jogador))
-									<select class="custom-select" name="esporte" disabled="disabled">
+								@if(!empty($time))
+									<select class="custom-select" id="esporte" name="esporte" disabled="disabled">
 								@else
-									<select class="custom-select" name="esporte">
+									<select class="custom-select" id="esporte" name="esporte">
 								@endif
 									@if(empty($dadosUsuario['esporte']))
 										<option value=""></option>
 									@endif
 					
-									<option value="futebol" {{ @if($dadosUsuario['esporte'] == 'futebol') selected @endif}}>Futebol</option>
-									<option value="basquete" {{ @if($dadosUsuario['esporte'] == 'basquete') selected @endif}}>Basquete</option>
-									<option value="volei" {{ @if($dadosUsuario['esporte'] == 'volei') selected @endif}}>Vôlei</option>
+									<option value="futebol" @if($dadosUsuario['esporte'] == 'futebol') selected @endif>Futebol</option>
+									<option value="basquete"  @if($dadosUsuario['esporte'] == 'basquete') selected @endif>Basquete</option>
+									<option value="volei"  @if($dadosUsuario['esporte'] == 'volei') selected @endif>Vôlei</option>
 								</select>
-							</div>
-						</div>
+							</section>
+						</section>
 
 						<button class="btn btn-light" type="button" name="salvar" data-toggle="modal" data-target="#alterar_usuario">
 							Salvar Alterações
@@ -118,20 +119,20 @@
 						</a>
 
 				</section>
-			</div>	
-		</div>
+			</section>	
+		</section>
 
 		<!--Modal-Confirmação_de_Senha-->
-		<div class="modal fade" id="alterar_usuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
+		<section class="modal fade" id="alterar_usuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<section class="modal-dialog">
+				<section class="modal-content">
+					<section class="modal-header">
 						<h5 class="modal-title" id="exampleModalLabel">Confime sua Senha</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
-					</div>
-					<div class="modal-body">	
+					</section>
+					<section class="modal-body">	
 						<section class="tudo-box">
 							<label for="senha">
 								Senha
@@ -139,48 +140,50 @@
 							<input id="senha" type="password" name="senha" placeholder="******"/>
 							<span class='erro-validacao template msg-senha'>
 						</section>
-					</div>
-					<div class="modal-footer">
+					</section>
+					<section class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
 						<input type="submit" name="alterar" value="Alterar" class="btn btn-primary" data-toggle="modal" data-target="#resposta_alterar">
 			</form>
-					</div>
-				</div>
-			</div>
-		</div>
+					</section>
+				</section>
+			</section>
+		</section>
 
 		<!--Modal-Senha-Incorreta -->
 		<section>
-			<div class="modal fade" id="senha_incorreta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
+			<section class="modal fade" id="senha_incorreta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<section class="modal-dialog">
+					<section class="modal-content">
+						<section class="modal-header">
 							<h5 class="modal-title" id="exampleModalLabel">Senha Incorreta</h5>
-						</div>
-						<div class="modal-footer">
+						</section>
+						<section class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
-						</div>
-					</div>
-				</div>
-			</div>						
+						</section>
+					</section>
+				</section>
+			</section>						
 		</section>
 
 		<!--Modal-Alterações_Completas-->
 		<section>
-			<div class="modal fade" id="alteracao_completa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
+			<section class="modal fade" id="alteracao_completa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<section class="modal-dialog">
+					<section class="modal-content">
+						<section class="modal-header">
 							<h5 class="modal-title" id="exampleModalLabel">Alterações Completas</h5>
-						</div>							     
-						<div class="modal-footer">
+						</section>							     
+						<section class="modal-footer">
 							<a href="perfil.php">
 								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#completa">OK</button>
 							</a>
-						</div>
-					</div>
-				</div>
-			</div>						
+						</section>
+					</section>
+				</section>
+			</section>						
 		</section>
     </main>
+
+	<script type="text/javascript" src="{{asset('js/alterar.js') }}"></script>
 @endsection

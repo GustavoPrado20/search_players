@@ -73,7 +73,7 @@ class ChatController extends Controller
         }
     }
 
-    public function dados_chat(Request $request)
+    public function dados_chat()
     {
         $id_usuario = auth()->user()->id;
         $id_destino = session()->get('id_destino');
