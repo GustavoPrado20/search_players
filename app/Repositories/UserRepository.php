@@ -52,7 +52,6 @@ class UserRepository extends AbstractRepository
 
             $foto->move($caminho_imagem, $nome_foto);
 
-            //$update_foto = User::where('id', $id_usuario)->update('foto', $nome_foto);
             return $nome_foto;
         }
     }
@@ -84,7 +83,6 @@ class UserRepository extends AbstractRepository
 
             $banner->move($caminho_imagem, $nome_banner);
 
-            //$update_foto = User::where('id', $id_usuario)->update('banner', $nome_banner);
             return $nome_banner;
         }
     }

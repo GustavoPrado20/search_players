@@ -40,13 +40,19 @@ class ConfiguracaoPerfilController extends Controller
 
             if(!empty($request['foto']))
             {
-                unlink(public_path('img/foto_perfis/'.$foto));
+                if(!empty($foto))
+                {
+                    unlink(public_path('img/foto_perfis/'.$foto));
+                }
                 $foto = UserRepository::pixelsFoto($request['foto']);
             }
 
             if(!empty($request['banner']))
             {
-                unlink(public_path('img/foto_perfis/'.$banner));
+                if(!empty($banner))
+                {
+                    unlink(public_path('img/banner_perfis/'.$banner));
+                }
                 $banner = UserRepository::pixelsBanner($request['banner']);
             }
 
