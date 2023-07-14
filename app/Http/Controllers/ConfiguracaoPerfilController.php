@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\jogadores_time;
 use App\Repositories\TimesRepository;
 use Illuminate\Http\Request;
 use App\Repositories\UserRepository;
@@ -21,8 +22,9 @@ class ConfiguracaoPerfilController extends Controller
 
         $dadosUsuario = UserRepository::find($id_usuario);
         $time = TimesRepository::findByIdDono($id_usuario);
+        $jogador = jogadores_time::where('id_jogador', $id_usuario)->first();
         
-        return view("config.config-perfil", ["dadosUsuario" => $dadosUsuario, "time" => $time]);
+        return view("config.config-perfil", ["dadosUsuario" => $dadosUsuario, "time" => $time, "jogador" => $jogador]);
     }
 
     public function updatePerfil(Request $request)

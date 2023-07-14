@@ -11,7 +11,9 @@ class jogadores_time extends Model
 
     protected $table = 'jogadores_times';
 
-    protected $fillable = 'posicao';
+    protected $fillable = [
+        'posicao'
+    ];
 
     //revertendo a relacao com a model Times
     public function times(){

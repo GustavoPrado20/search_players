@@ -11,7 +11,9 @@ class chat_time extends Model
 
     protected $table = 'chat_times';
 
-    protected $fillable = 'mensagem';
+    protected $fillable = [
+        'mensagem'
+    ];
 
     //revertendo relacao com a model times
     public function times(){

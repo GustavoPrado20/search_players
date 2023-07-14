@@ -44,6 +44,8 @@ Route::prefix('/configuração')->group(function(){
     Route::post('/perfil/update', [Controllers\ConfiguracaoPerfilController::class, 'updatePerfil'])->name('config_update_perfil');
     Route::get('/perfil/deleteFoto', [Controllers\ConfiguracaoPerfilController::class, 'deleteFoto'])->name('apagar_foto');
     Route::get('/perfil/deleteBanner', [Controllers\ConfiguracaoPerfilController::class, 'deleteBanner'])->name('apagar_banner');
+
+    Route::get('/conta', [Controllers\ConfiguracaoContaController::class, 'index'])->name('config_conta');
 });
 
 /*

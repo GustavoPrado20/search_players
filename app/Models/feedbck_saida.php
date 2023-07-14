@@ -11,7 +11,9 @@ class feedbck_saida extends Model
 
     protected $table = 'feedbck_saidas';
 
-    protected $fillable = 'opiniao';
+    protected $fillable = [
+        'opiniao'
+    ];
 
     //Revertendo relacao com a model User
     public function User(){
