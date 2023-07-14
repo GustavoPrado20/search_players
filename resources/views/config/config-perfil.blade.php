@@ -37,7 +37,7 @@
 							</figure>
 
 							@if(!empty($dadosUsuario['foto']))
-								<a href="retira_foto.php">
+								<a href="{{route('apagar_foto')}}">
 									<button class="btn btn-danger" type="button">
 										Retirar Foto
 									</button>
@@ -61,7 +61,7 @@
 							</figure>
 
 							@if(!empty($dadosUsuario['banner']))
-								<a href="retira_banner.php">
+								<a href="{{route('apagar_banner')}}">
 									<button  class="btn btn-danger" type="button">
 										Retirar Banner
 									</button>
@@ -114,7 +114,7 @@
 						<button class="btn btn-light" type="button" name="salvar" data-toggle="modal" data-target="#alterar_usuario">
 							Salvar Alterações
 						</button>
-						<a href="perfil.php">
+						<a href="{{route('config_perfil')}}">
 							<button class="btn btn-danger" type="button">Cancelar</button> 
 						</a>
 
@@ -175,7 +175,7 @@
 							<h5 class="modal-title" id="exampleModalLabel">Alterações Completas</h5>
 						</section>							     
 						<section class="modal-footer">
-							<a href="perfil.php">
+							<a href="{{route('config_perfil')}}">
 								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#completa">OK</button>
 							</a>
 						</section>

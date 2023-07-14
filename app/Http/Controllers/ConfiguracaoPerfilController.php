@@ -25,7 +25,7 @@ class ConfiguracaoPerfilController extends Controller
         return view("config.config-perfil", ["dadosUsuario" => $dadosUsuario, "time" => $time]);
     }
 
-    public function update(Request $request)
+    public function updatePerfil(Request $request)
     {
         $id_usuario = auth()->user()->id;
         $dadosUsuario = UserRepository::find($id_usuario);
@@ -38,11 +38,13 @@ class ConfiguracaoPerfilController extends Controller
 
             if(!empty($request['foto']))
             {
+                unlink(public_path('img/foto_perfis/'.$foto));
                 $foto = UserRepository::pixelsFoto($request['foto']);
             }
 
             if(!empty($request['banner']))
             {
+                unlink(public_path('img/foto_perfis/'.$banner));
                 $banner = UserRepository::pixelsBanner($request['banner']);
             }
 
@@ -60,7 +62,39 @@ class ConfiguracaoPerfilController extends Controller
                 return redirect()->intended('/configuração/perfil');
             }
         }
+    }
 
-        echo '<script type="text/javascript">$(document).ready(function(){$("#senha_incorreta").modal("show");});</script>';
+    public function deleteFoto()
+    {
+        $id_usuario = auth()->user()->id;
+        $dadosUsuario = UserRepository::find($id_usuario);
+
+        $data = ["foto" => null];
+
+        $update = UserRepository::update($id_usuario, $data);
+
+        if($update)
+        {
+            unlink(public_path('img/foto_perfis/'.$dadosUsuario['foto']));
+
+            return redirect()->intended('/configuração/perfil');
+        }
+    }
+
+    public function deleteBanner()
+    {
+        $id_usuario = auth()->user()->id;
+        $dadosUsuario = UserRepository::find($id_usuario);
+
+        $data = ["banner" => null];
+
+        $update = UserRepository::update($id_usuario, $data);
+
+        if($update)
+        {
+            unlink(public_path('img/banners_perfis/'.$dadosUsuario['banner']));
+
+            return redirect()->intended('/configuração/perfil');
+        }
     }
 }
