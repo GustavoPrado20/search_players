@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
+use App\Http\Controllers\Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,10 +47,13 @@ Route::prefix('/configuração')->group(function(){
     Route::get('/perfil/deleteBanner', [Controllers\ConfiguracaoPerfilController::class, 'deleteBanner'])->name('apagar_banner');
 
     Route::get('/conta', [Controllers\ConfiguracaoContaController::class, 'index'])->name('config_conta');
+    Route::post('/conta/update', [Controllers\ConfiguracaoContaController::class, 'updateConta'])->name('config_update_conta');
+    Route::post('/conta/update/senha', [Controllers\ConfiguracaoContaController::class, 'updateSenha'])->name('config_update_conta_senha');
+    Route::get('/conta/delete', [Controllers\ConfiguracaoContaController::class, 'deleteContaIndex'])->name('config_delete_conta');
+    Route::post('/conta/delete/conta', [Controllers\ConfiguracaoContaController::class, 'deleteConta'])->name('config_delete_conta_confirm');
 });
 
 /*
-Route::get('/conta', [Controllers\ConfiguracaoController::class, 'config_conta'])->name('config_conta');
 Route::get('/localização', [Controllers\ConfiguracaoController::class, 'config_localizacao'])->name('config_localizacao');
 Route::get('/time', [Controllers\ConfiguracaoController::class, 'config_time'])->name('config_time');
 

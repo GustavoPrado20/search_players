@@ -12,6 +12,9 @@ class feedbck_saida extends Model
     protected $table = 'feedbck_saidas';
 
     protected $fillable = [
+        'id_usuario',
+        'nome',
+        'email',
         'opiniao'
     ];
 

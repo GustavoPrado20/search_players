@@ -14,7 +14,8 @@
                 <section class="col-md-9">
                     <h1 class="text-title">Configuração de Conta</h1>
                     <p class="text">Essas informações facilitarão as buscas dos times da sua regiões.</p>
-                    <form name="config_conta" method="POST" action="#" id="altera_form">
+                    <form name="config_conta" method="POST" action="{{route('config_update_conta')}}" id="altera_form">
+                        @csrf
                         <div form="form-group">
                             <label for="email">
                                 Endereço de e-mail
@@ -28,7 +29,7 @@
                                 <div class="col-sm-10">
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="sexo" id="masculino"
-                                            value="1" @if($dadosUsuario['sexo'] == 'masculino')
+                                            value="masculino" @if($dadosUsuario['sexo'] == 'masculino')
                                                 checked
                                             @endif>
                                         <label for='masculino'>
@@ -37,7 +38,7 @@
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="sexo" id="feminino"
-                                            value="2" @if($dadosUsuario['sexo'] == 'femenino')
+                                            value="femenino" @if($dadosUsuario['sexo'] == 'femenino')
                                                 checked
                                             @endif>
                                         <label for="feminino">
@@ -46,7 +47,7 @@
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="sexo" id="indefinido"
-                                            value="NULL" @if($dadosUsuario['sexo'] == null)
+                                            value="" @if($dadosUsuario['sexo'] == null)
                                                 checked
                                             @endif>
                                         <label for="indefinido">
@@ -100,7 +101,7 @@
                             <div class="col-sm-10">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="tipo" id="jogador"
-                                        value="1" @if($dadosUsuario['tipo_usuario'] == 'jogador')
+                                        value="jogador" @if($dadosUsuario['tipo_usuario'] == 'jogador')
                                                 checked
                                             @endif>
                                     <label for='jogador'>
@@ -121,7 +122,7 @@
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="tipo" id="adm"
-                                        value="2" @if($dadosUsuario['tipo_usuario'] == 'administrador_time')
+                                        value="administrador_time" @if($dadosUsuario['tipo_usuario'] == 'administrador_time')
                                                 checked
                                             @endif>
                                     <label for="adm">
@@ -142,7 +143,7 @@
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="tipo" id="analista"
-                                        value="3" @if($dadosUsuario['tipo_usuario'] == 'analisador')
+                                        value="analisador" @if($dadosUsuario['tipo_usuario'] == 'analisador')
                                                 checked
                                             @endif>
                                     <label for="analista">
@@ -169,10 +170,10 @@
                         @if($time || $jogador)
                             <a href="#">
                                 <button class="btn btn-danger" data-toggle="modal" data-target="#excluir_time">Excluir
-                                    Time</button>
+                                    Conta</button>
                             </a>
                         @else
-                            <a href="excluir_conta.php">
+                            <a href="{{route('config_delete_conta')}}">
                                 <button class="btn btn-danger" type="button">Excluir Conta</button>
                             </a>
                         @endif
@@ -220,7 +221,8 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form name="altera_senha" method="POST" action="#" id="altera_senha">
+                    <form name="altera_senha" method="POST" action="{{route('config_update_conta_senha')}}" id="altera_senha">
+                        @csrf
                         <div class="modal-body">
                             <section class="tudo-box">
                                 <label for="senha_a">

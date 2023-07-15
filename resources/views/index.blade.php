@@ -44,7 +44,6 @@
 					<section class="box">
 						<form name="login" method="POST" action="{{ route('logar') }}" id="login-form">
 							@csrf
-
 							<section class="form-group">	
 								<label for="login"><h5>Email</h5></label>
 								<input id="login" class="form-control" name="email" type="text" placeholder="Informe seu Email" value = "{{ old('email') }}" autofocus autocomplete = "on"/>
@@ -101,7 +100,6 @@
 			      		<section class="container-fluid">	
 							<form id="cadastre-form" name="form" method="POST" action="{{ route('registrar-usuario') }}">
 								@csrf
-
 								<section class="row">
 									<section class="col-md-6 form-group">
 										<label for="nome">Nome</label>
