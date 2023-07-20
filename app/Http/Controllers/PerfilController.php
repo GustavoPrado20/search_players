@@ -22,7 +22,7 @@ class PerfilController extends Controller
 
         $endereco = EnderecosRepository::findByIdUsuario($id);
 
-        $times = TimesRepository::all()->where('id_usuario', '=', $id);
+        $times = TimesRepository::findByIdDono($id);
 
         $dadosUsuario = UserRepository::find($id);
         

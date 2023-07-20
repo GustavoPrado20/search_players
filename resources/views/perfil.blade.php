@@ -126,8 +126,9 @@
                                 <p class="text-mensagem">
                                     @if (!empty($times))
                                         Time: {{ $times['nome'] }}
+                                    @else
+                                        Você ainda não tem um time!
                                     @endif
-                                    Você ainda não tem um time!
                                 </p>
 
                                 <p class="text_mensagem">Ranking:

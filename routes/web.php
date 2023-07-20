@@ -51,10 +51,11 @@ Route::prefix('/configuração')->group(function(){
     Route::post('/conta/update/senha', [Controllers\ConfiguracaoContaController::class, 'updateSenha'])->name('config_update_conta_senha');
     Route::get('/conta/delete', [Controllers\ConfiguracaoContaController::class, 'deleteContaIndex'])->name('config_delete_conta');
     Route::post('/conta/delete/conta', [Controllers\ConfiguracaoContaController::class, 'deleteConta'])->name('config_delete_conta_confirm');
+
+    Route::get('/localização', [Controllers\ConfiguracaoLocalizacaoController::class, 'index'])->name('config_localizacao');
 });
 
 /*
-Route::get('/localização', [Controllers\ConfiguracaoController::class, 'config_localizacao'])->name('config_localizacao');
 Route::get('/time', [Controllers\ConfiguracaoController::class, 'config_time'])->name('config_time');
 
 Route::get('/times', [Controllers\TimeController::class, ''])->name('times');

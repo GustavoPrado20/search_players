@@ -7,7 +7,7 @@
 			<h5><a class="text_menu_config" href="{{route('config_conta')}}">Configurações da Conta</a></h5>
 		</li>
 		<li  class="menu_config_item">
-			<h5><a href="localiza.php" class="text_menu_config">Localização</a></h5>
+			<h5><a href="{{route('config_localizacao')}}" class="text_menu_config">Localização</a></h5>
 		</li>
 		@if(!empty($time))
 			<li  class="menu_config_item">

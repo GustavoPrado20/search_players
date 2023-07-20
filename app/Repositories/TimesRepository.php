@@ -15,5 +15,4 @@ class TimesRepository extends AbstractRepository
     public static function findByIdDono(int $id_dono){
         return self::loadModel()::query()->where( ['id_dono' => $id_dono])->first();  
     }
-
 }

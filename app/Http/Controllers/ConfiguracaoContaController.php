@@ -54,9 +54,7 @@ class ConfiguracaoContaController extends Controller
             {
                 return redirect()->intended('/configuração/conta');
             }
-            return "nao foi";
         }
-        return "Falhou";
     }
 
     public function updateSenha(Request $request)
@@ -74,9 +72,7 @@ class ConfiguracaoContaController extends Controller
             {
                 return redirect()->intended('/configuração/conta');
             }
-            return "nao foiiiii";
         }
-        return "nao foi";
     }
 
     public function deleteContaIndex()

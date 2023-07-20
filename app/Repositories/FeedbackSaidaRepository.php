@@ -12,7 +12,4 @@ class FeedbackSaidaRepository extends AbstractRepository
 {
     protected static $model = feedbck_saida::class;
 
-    public static function findByIdUsuario(int $id_usuario){
-        return self::loadModel()::query()->where('id_usuario', '=', $id_usuario)->first();  
-    }
 }
