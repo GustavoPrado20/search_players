@@ -7,15 +7,15 @@
 <html lang="pt-br">
 	<head>
 		<!-- Styles -->
-		<link rel="stylesheet" href="./css/style_header.css">
-		<link rel="stylesheet" href="./css/style_footer.css">
-		<link rel="stylesheet" href="./css/style_home.css">
-		<link rel="stylesheet" href="./css/bootstrap.min.css">
-		<link rel="stylesheet" href="./css/style_meutime.css">
-		<link rel="stylesheet" href="./css/main.css">
+		<link rel="stylesheet" href="./public/css/style_header.css">
+		<link rel="stylesheet" href="./public/css/style_footer.css">
+		<link rel="stylesheet" href="./public/css/style_home.css">
+		<link rel="stylesheet" href="./public/css/bootstrap.min.css">
+		<link rel="stylesheet" href="./public/css/style_meutime.css">
+		<link rel="stylesheet" href="./public/css/main.css">
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
-		<link rel="sortcut icon" href="./img/icon.png" type="image/x-icon" />
+		<link rel="sortcut icon" href="./public/img/icon.png" type="image/x-icon" />
 
 		<!-- Metas -->
 		<meta charset="UTF-8">
@@ -175,7 +175,7 @@
 					?>
 					<section class="d-flex align-items-center flex-column">
 						<div class="mx-auto" style="width: 400px;">
-							<img class="ausencia_img" style="width: 400px;" src="./img/ausencia_dados">
+							<img class="ausencia_img" style="width: 400px;" src="./public/img/ausencia_dados.svg">
 						</div>
 						<?php
 							$esporte='select * from usuario where id_usuario='.$_SESSION['id_usuario'].';';

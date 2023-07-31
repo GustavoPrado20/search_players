@@ -7,14 +7,14 @@
 <html lang="pt-br">
 	<head>
 		<!-- Styles -->
-		<link rel="stylesheet" href="./css/style_header.css">
-		<link rel="stylesheet" href="./css/style_footer.css">
-		<link rel="stylesheet" href="./css/style_home.css">
-		<link rel="stylesheet" href="./css/bootstrap.min.css">
-		<link rel="stylesheet" href="./css/main.css">
-		<link rel="stylesheet" href="./css/style_rank.css">
+		<link rel="stylesheet" href="./public/css/style_header.css">
+		<link rel="stylesheet" href="./public/css/style_footer.css">
+		<link rel="stylesheet" href="./public/css/style_home.css">
+		<link rel="stylesheet" href="./public/css/bootstrap.min.css">
+		<link rel="stylesheet" href="./public/css/main.css">
+		<link rel="stylesheet" href="./public/css/style_rank.css">
 		<meta charset="UTF-8">
-		<link rel="sortcut icon" href="./img/icon.png" type="image/x-icon" />
+		<link rel="sortcut icon" href="./public/img/icon.png" type="image/x-icon" />
 		<title>Search Players</title>
 		<meta name="author" content="Equipe Search Players">
 		<meta name="description" content="Ranking da Search Players">

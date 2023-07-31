@@ -55,15 +55,16 @@
 <html lang="pt-br">
 	<head>
 		<!-- Styles -->
-		<link rel="stylesheet" href="./css/style_header.css">
-		<link rel="stylesheet" href="./css/style_footer.css">
-		<link rel="stylesheet" href="./css/style_home.css">
-		<link rel="stylesheet" href="./css/bootstrap.min.css">
-		<link rel="stylesheet" href="./css/main.css">
-		<link rel="stylesheet" href="./css/style_config.css">
+		<link rel="stylesheet" href="./public/css/style_header.css">
+		<link rel="stylesheet" href="./public/css/style_footer.css">
+		<link rel="stylesheet" href="./public/css/style_home.css">
+		<link rel="stylesheet" href="./public/css/bootstrap.min.css">
+		<link rel="stylesheet" href="./public/css/main.css">
+		<link rel="stylesheet" href="./public/css/style_config.css">
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
-		<link rel="sortcut icon" href="./img/icon.png" type="image/x-icon" />
+		<link rel="sortcut icon" href="./public/img/icon.png" type="image/x-icon"/>
+
 		<meta charset="UTF-8">
 		<title>Search Players</title>
 		<meta name="author" content="Equipe Search Players">

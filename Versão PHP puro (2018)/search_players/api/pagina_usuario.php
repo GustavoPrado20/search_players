@@ -8,13 +8,13 @@
 <html lang="pt-br">
 	<head>
 		<!-- Styles -->
-		<link rel="stylesheet" href="./css/style_header.css">
-		<link rel="stylesheet" href="./css/style_footer.css">
-		<link rel="stylesheet" href="./css/style_home.css">
-		<link rel="stylesheet" href="./css/style_meutime.css">
-		<link rel="stylesheet" href="./css/bootstrap.min.css">
-		<link rel="stylesheet" href="./css/main.css">
-		<link rel="sortcut icon" href="./img/icon.png" type="image/x-icon" />
+		<link rel="stylesheet" href="./public/css/style_header.css">
+		<link rel="stylesheet" href="./public/css/style_footer.css">
+		<link rel="stylesheet" href="./public/css/style_home.css">
+		<link rel="stylesheet" href="./public/css/style_meutime.css">
+		<link rel="stylesheet" href="./public/css/bootstrap.min.css">
+		<link rel="stylesheet" href="./public/css/main.css">
+		<link rel="sortcut icon" href="./public/img/icon.png" type="image/x-icon" />
 
 		<!-- Metas -->
 		<meta charset="UTF-8">

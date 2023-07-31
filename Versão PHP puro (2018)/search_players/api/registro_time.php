@@ -7,15 +7,15 @@
 <html lang="pt-br">
 	<head>
 		<!-- Styles -->
-		<link rel="stylesheet" href="./css/style_header.css">
-		<link rel="stylesheet" href="./css/style_footer.css">
-		<link rel="stylesheet" href="./css/style_home.css">
-		<link rel="stylesheet" href="./css/bootstrap.min.css">
-		<link rel="stylesheet" href="./css/main.css">
-		<script type="text/javascript" src="./js/jquery-3.5.1.min.js"></script>
-		<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="./public/css/style_header.css">
+		<link rel="stylesheet" href="./public/css/style_footer.css">
+		<link rel="stylesheet" href="./public/css/style_home.css">
+		<link rel="stylesheet" href="./public/css/bootstrap.min.css">
+		<link rel="stylesheet" href="./public/css/main.css">
+		<script type="text/javascript" src="./public/js/jquery-3.5.1.min.js"></script>
+		<script type="text/javascript" src="./public/js/bootstrap.min.js"></script>
 		<meta charset="UTF-8">
-		<link rel="sortcut icon" href="./img/icon.png" type="image/x-icon" />
+		<link rel="sortcut icon" href="./public/img/icon.png" type="image/x-icon" />
 		<title>Search Players</title>
 		<meta name="author" content="Equipe Search Players">
 		<meta name="description" content="Registro de time da Search Players">

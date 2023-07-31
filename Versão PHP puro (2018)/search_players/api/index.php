@@ -11,13 +11,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>			
-		<link rel="stylesheet" href="./css/bootstrap.min.css">
-		<link rel="stylesheet" href="./css/main.css">
-		<link rel="stylesheet" href="./css/style_login.css">
+		<link rel="stylesheet" href="./public/css/bootstrap.min.css">
+		<link rel="stylesheet" href="./public/css/main.css">
+		<link rel="stylesheet" href="./public/css/style_login.css">
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,600&display=swap" rel="stylesheet">	
 		<meta charset="UTF-8">
-		<link rel="sortcut icon" href="./img/icon.png" type="image/x-icon" />
+		<link rel="sortcut icon" href="./public/img/icon.png" type="image/x-icon" />
 		<title>Search Players</title>
 		<meta name="author" content="Equipe Search Players">
 		<meta name="description" content="form da Search Players">
@@ -26,7 +26,7 @@
 	<body>
 		<main class="container-fluid">
 			<section class=" d-none d-lg-block">
-				<img src="./img/fumaca.png" class="smoke" alt="...">
+				<img src="./public/img/fumaca.png" class="smoke" alt="...">
 			</section>
 
 			<div class="row">
@@ -34,20 +34,20 @@
 					<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
 					  	<div class="carousel-inner">
 						    <div class="carousel-item active">
-						        <img src="./img/basketball.svg" class="" alt="...">
+						        <img src="./public/img/basketball.svg" class="" alt="...">
 						    </div>
 						    <div class="carousel-item">
-						      	<img src="./img/soccer.svg" class="" alt="...">
+						      	<img src="./public/img/soccer.svg" class="" alt="...">
 						    </div>
 						    <div class="carousel-item">
-						     	<img src="./img/volley.svg" class="" alt="...">
+						     	<img src="./public/img/volley.svg" class="" alt="...">
 						    </div>
 					  	</div>
 					</div>
 				</div>
 				<div class="col-lg-4 bg">
 					<figure>
-						<img class="logo" src="./img/logo_light.png" alt="Logo Search Players">
+						<img class="logo" src="./public/img/logo_light.png" alt="Logo Search Players">
 					</figure>
 					<section class="box">
 						<form name="login" method="POST" action="logar.php" id="login-form">
@@ -170,9 +170,9 @@
 		</div>
 
 			<!--Scripts-->
-		<script type="text/javascript" src="./js/cadastro.js"></script>
-		<script type="text/javascript" src="./js/login.js"></script>
-		<script type="text/javascript" src="./js/jquery-3.5.1.min.js"></script>
-		<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="./public/js/cadastro.js"></script>
+		<script type="text/javascript" src="./public/js/login.js"></script>
+		<script type="text/javascript" src="./public/js/jquery-3.5.1.min.js"></script>
+		<script type="text/javascript" src="./public/js/bootstrap.min.js"></script>
 	</body>
 </html>

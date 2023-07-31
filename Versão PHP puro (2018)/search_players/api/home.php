@@ -8,13 +8,13 @@
 <html lang="pt-br">
 	<head>
 		<!-- Styles -->
-		<link rel="stylesheet" href="./css/style_header.css">
-		<link rel="stylesheet" href="./css/style_footer.css">
-		<link rel="stylesheet" href="./css/style_home.css">
-		<link rel="stylesheet" href="./css/bootstrap.min.css">
-		<link rel="stylesheet" href="./css/main.css">
+		<link rel="stylesheet" href="./public/css/style_header.css">
+		<link rel="stylesheet" href="./public/css/style_footer.css">
+		<link rel="stylesheet" href="./public/css/style_home.css">
+		<link rel="stylesheet" href="./public/css/bootstrap.min.css">
+		<link rel="stylesheet" href="./public/css/main.css">
 		<meta charset="UTF-8">
-		<link rel="sortcut icon" href="./img/icon.png" type="image/x-icon" />
+		<link rel="sortcut icon" href="./public/img/icon.png" type="image/x-icon" />
 		<title>Search Players</title>
 		<meta name="author" content="Equipe Search Players">
 		<meta name="description" content="Pagina Principal da Search Players">
@@ -34,13 +34,13 @@
 				</ol>
 			  	<div class="carousel-inner">
 			   		<figure class="carousel-item active">
-			  			<img src="./img/banner1.png" class="d-block w-100">
+			  			<img src="./public/img/banner1.png" class="d-block w-100">
 			   		</figure>
 					<figure class="carousel-item">
-				  		<img src="./img/banner2.png" class="d-block w-100">
+				  		<img src="./public/img/banner2.png" class="d-block w-100">
 				  	</figure>
 				  	<figure class="carousel-item">
-				  		<img src="./img/banner3.gif" class="d-block w-100">
+				  		<img src="./public/img/banner3.gif" class="d-block w-100">
 				  	</figure>
 				</div>
 				<a class="carousel-control-prev" href="#carouselhome" role="button" data-slide="prev">
@@ -98,7 +98,7 @@
 						<ul>
 					</div>
 					<figure class="col-md-6">
-						<img class="img-fluid" src="./img/figure1.jpg">
+						<img class="img-fluid" src="./public/img/figure1.jpg">
 					</figure>
 				</div>
 			</section>

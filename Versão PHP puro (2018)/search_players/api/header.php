@@ -1,6 +1,6 @@
 <header class="navbar navbar-expand navbar-dark flex-column fixed-top flex-md-row bd-navbar">
 	<a class="navbar-brand mr-0 mr-md-2" href="home.php">
-		<img class="logo" src="./img/logo_light.png" alt="Logo Search Players">
+		<img class="logo" src="./public/img/logo_light.png" alt="Logo Search Players">
 	</a>
 	<section class="itens_1">
 		<input type="checkbox" id="hamburguer" style="display: none;">
@@ -16,12 +16,12 @@
 							<?php
 								if(empty($_SESSION['foto_usuario'])){
 									if(empty($_SESSION['sexo'])||$_SESSION['sexo']==1){
-										echo('<img class="user_img" src="./img/foto_perfis/user_m.svg" alt="Imagem do Usuário">');
+										echo('<img class="user_img" src="./public/img/foto_perfis/user_m.svg" alt="Imagem do Usuário">');
 									}else{
-										echo('<img class="user_img" src="./img/foto_perfis/user_f.svg" alt="Imagem do Usuário">');
+										echo('<img class="user_img" src="./public/img/foto_perfis/user_f.svg" alt="Imagem do Usuário">');
 									}
 								}else{
-									echo('<img class="user_img rounded-circle" src="./img/foto_perfis/'.$_SESSION['foto_usuario'].'" alt="Imagem do usuário">');
+									echo('<img class="user_img rounded-circle" src="./public/img/foto_perfis/'.$_SESSION['foto_usuario'].'" alt="Imagem do usuário">');
 								}
 							?>
 						</figure>
@@ -218,6 +218,6 @@
 </header>	  	
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" ></script>
-<script type="text/javascript" src="./js/jquery-3.5.1.min.js"></script>
-<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./public/js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="./public/js/bootstrap.min.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" integrity="sha384-9/D4ECZvKMVEJ9Bhr3ZnUAF+Ahlagp1cyPC7h5yDlZdXs4DQ/vRftzfd+2uFUuqS" crossorigin="anonymous"></script>

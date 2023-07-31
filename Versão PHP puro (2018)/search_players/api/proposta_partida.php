@@ -57,15 +57,15 @@
 <html lang="pt-br">
 	<head>
 		<!-- Styles -->
-		<link rel="stylesheet" href="./css/style_header.css">
-		<link rel="stylesheet" href="./css/style_footer.css">
-		<link rel="stylesheet" href="./css/style_home.css">
-		<link rel="stylesheet" href="./css/bootstrap.min.css">
-		<link rel="stylesheet" href="./css/style_meutime.css">
+		<link rel="stylesheet" href="./public/css/style_header.css">
+		<link rel="stylesheet" href="./public/css/style_footer.css">
+		<link rel="stylesheet" href="./public/css/style_home.css">
+		<link rel="stylesheet" href="./public/css/bootstrap.min.css">
+		<link rel="stylesheet" href="./public/css/style_meutime.css">
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="./css/main.css">
-		<link rel="sortcut icon" href="./img/icon.png" type="image/x-icon" />
+		<link rel="stylesheet" href="./public/css/main.css">
+		<link rel="sortcut icon" href="./public/img/icon.png" type="image/x-icon" />
 
 		<!-- Metas -->
 		<meta charset="UTF-8">
@@ -119,7 +119,7 @@
 							?>
 							<section class="container">
 								<figure class="mx-auto" style="width:450px;">
-									<img style="width:450px;" src="./img/aceitar_partida.svg">
+									<img style="width:450px;" src="./public/img/aceitar_partida.svg">
 								</figure>
 								<?php
 									echo(' <p class="text-center text_mensagem">
@@ -340,7 +340,7 @@
 							
 							<section class="d-flex align-items-center flex-column">
 								<figure class="mx-auto" style="width: 400px;">
-									<img class="sem_proposta" style="width: 400px;" src="./img/sem_proposta">
+									<img class="sem_proposta" style="width: 400px;" src="./public/img/sem_proposta.svg">
 								</figure>
 								<p class="text-center text_mensagem">
 									Você já não tem nenhuma proposta de partida com esse time!
@@ -357,7 +357,7 @@
 						?>
 						<section class="d-flex align-items-center flex-column">
 							<figure class="mx-auto" style="width: 400px;">
-								<img class="sem_time" style="width: 400px;" src="./img/sem_proposta">
+								<img class="sem_time" style="width: 400px;" src="./public/img/sem_proposta.svg">
 							</figure>
 							<p class="text-center text_mensagem">
 								Você não é dono de nenhum desses times!!!

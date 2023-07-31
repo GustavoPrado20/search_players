@@ -106,7 +106,7 @@
 					<h3 class="footer_title">Nossas Redes Sociais</h3>	
 						<section class="d-flex align-items-center flex-column">
 							<div class="mx-auto" style="width: 250px;">
-								<img class="redes_sociais" style="width: 250px;" src="./img/redes_sociais">
+								<img class="redes_sociais" style="width: 250px;" src="./public/img/redes_sociais">
 							</div>
 						</section>	
 						<section class="text-center" style="margin-top: 25px;">

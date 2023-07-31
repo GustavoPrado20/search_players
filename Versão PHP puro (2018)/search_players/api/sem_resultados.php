@@ -4,7 +4,7 @@
 			?>
 				<section class="d-flex align-items-center flex-column">
 					<div class="mx-auto" style="width: 400px;">
-						<img class="sem_pesquisa" style="width: 400px;" src="./img/sem_pesquisa">
+						<img class="sem_pesquisa" style="width: 400px;" src="./public/img/sem_pesquisa.svg">
 					</div>
 					<p class="text-center text_mensagem">
 						Nenhum resultado achado para essa pesquisa!
@@ -17,7 +17,7 @@
 			?>
 				<section class="d-flex align-items-center flex-column">
 					<div class="mx-auto" style="width: 400px;">
-						<img class="sem_pesquisa" style="width: 400px;" src="./img/sem_pesquisa">
+						<img class="sem_pesquisa" style="width: 400px;" src="./public/img/sem_pesquisa.svg">
 					</div>
 					<p class="text-center text_mensagem">
 						Nenhum resultado achado com esses parâmetros de filtro!
@@ -30,7 +30,7 @@
 			?>
 				<section class="d-flex align-items-center flex-column">
 					<div class="mx-auto" style="width: 400px;">
-						<img class="sem_pesquisa" style="width: 400px;" src="./img/sem_pesquisa">
+						<img class="sem_pesquisa" style="width: 400px;" src="./public/img/sem_pesquisa.svg">
 					</div>
 					<p class="text-center text_mensagem">
 						Nenhum jogador encontrado!

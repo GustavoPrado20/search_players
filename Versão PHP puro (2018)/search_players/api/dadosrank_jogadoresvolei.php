@@ -7,7 +7,7 @@
 	$executar=mysqli_query($conexao, $consulta);
 ?>
 
-<link rel="stylesheet" href="./css/style_rank.css">
+<link rel="stylesheet" href="./public/css/style_rank.css">
 
 <p class="text-titulo">
 	Ranking - Jogadores (Vôlei)

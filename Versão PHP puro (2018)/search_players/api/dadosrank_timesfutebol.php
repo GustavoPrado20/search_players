@@ -6,7 +6,7 @@
 	$consulta='select * from times where id_esportes=1 order by pontos desc';
 	$executar=mysqli_query($conexao, $consulta);
 ?>
-<link rel="stylesheet" href="./css/style_rank.css">
+<link rel="stylesheet" href="./public/css/style_rank.css">
 
 <p class="text-titulo">
 	Ranking - Times (Futebol)

@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="./css/style_meutime.css">
+<link rel="stylesheet" href="./public/css/style_meutime.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
 <?php
@@ -11,7 +11,7 @@
 ?>
 	<section class="d-flex align-items-center flex-column">
 		<div class="mx-auto" style="width: 350px;">
-			<img class="sem_mensagem" style="width: 350px;" src="./img/sem_mensagem">
+			<img class="sem_mensagem" style="width: 350px;" src="./public/img/sem_mensagem.svg">
 		</div>
 		<p class="text-center text_mensagem">
 			<?php
@@ -43,7 +43,7 @@
 ?>
 	<section class="d-flex align-items-center flex-column">
 		<div class="mx-auto" style="width: 350px;">
-			<img class="sem_mensagem" style="width: 350px;" src="./img/sem_mensagem">
+			<img class="sem_mensagem" style="width: 350px;" src="./public/img/sem_mensagem.svg">
 		</div>
 		<p class="text-center text_mensagem ">
 			<?php
