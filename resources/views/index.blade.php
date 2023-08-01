@@ -6,7 +6,7 @@
 		<link rel="stylesheet" href="{{asset('css/style_login.css')}}">
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,600&display=swap" rel="stylesheet">	
-		<link rel="sortcut icon" href="{{asset('./img/icon.png')}}" type="image/x-icon" />
+		<link rel="sortcut icon" href="{{asset('img/icon.png')}}" type="image/x-icon" />
 
 		<meta charset="UTF-8">		
 		<meta name="author" content="Equipe Search Players">
