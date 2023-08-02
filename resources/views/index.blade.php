@@ -18,7 +18,7 @@
 	<body>
 		<main class="container-fluid">
 			<section class=" d-none d-lg-block">
-				<img src="./img/fumaca.png" class="smoke" alt="...">
+				<img src="{{asset('img/fumaca.png')}}" class="smoke" alt="...">
 			</section>
 
 			<section class="row">
@@ -26,20 +26,20 @@
 					<section id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
 					  	<section class="carousel-inner">
 						    <section class="carousel-item active">
-						        <img src="./img/basketball.svg" class="" alt="...">
+						        <img src="{{asset('img/basketball.svg')}}" class="" alt="...">
 						    </section>
 						    <section class="carousel-item">
-						      	<img src="./img/soccer.svg" class="" alt="...">
+						      	<img src="{{asset('img/soccer.svg')}}" class="" alt="...">
 						    </section>
 						    <section class="carousel-item">
-						     	<img src="./img/volley.svg" class="" alt="...">
+						     	<img src="{{asset('img/volley.svg')}}" class="" alt="...">
 						    </section>
 					  	</section>
 					</section>
 				</section>
 				<section class="col-lg-4 bg">
 					<figure>
-						<img class="logo" src="./img/logo_light.png" alt="Logo Search Players">
+						<img class="logo" src="{{asset('img/logo_light.png')}}" alt="Logo Search Players">
 					</figure>
 					<section class="box">
 						<form name="login" method="POST" action="{{ route('logar') }}" id="login-form">
