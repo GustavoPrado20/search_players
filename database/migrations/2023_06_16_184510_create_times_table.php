@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('times', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->string('brasao_time');
+            $table->string('brasao_time')->nullable();
             $table->string('esporte');
             $table->unsignedBigInteger('id_dono');
-            $table->integer('pontos');
-            $table->string('lema');
+            $table->integer('pontos')->nullable();
+            $table->string('lema')->nullable();
             $table->timestamps();
 
             //foreign keys

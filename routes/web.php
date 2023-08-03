@@ -55,12 +55,17 @@ Route::prefix('/configuração')->group(function(){
     Route::get('/localização', [Controllers\ConfiguracaoLocalizacaoController::class, 'index'])->name('config_localizacao');
 });
 
+Route::prefix('/times')->group(function(){
+    Route::get('/meu_time', [Controllers\MeuTimeController::class, 'index'])->name('meu_time');
+    Route::post('/meu_time', [Controllers\MeuTimeController::class, 'registrarTime'])->name('registrar_time');
+});
+
+
+
 /*
 Route::get('/time', [Controllers\ConfiguracaoController::class, 'config_time'])->name('config_time');
 
 Route::get('/times', [Controllers\TimeController::class, ''])->name('times');
-
-Route::get('/times/meu_time', [Controllers\MeuTimeController::class, ''])->name('meu_time');
 
 Route::get('/jogadores', [Controllers\jogadoresController::class, ''])->name('jogadores');
 

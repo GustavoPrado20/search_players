@@ -50,7 +50,7 @@
 					@switch($dadosUsuario['tipo_usuario'])
 						@case('jogador')
 							<li class="menu_item">
-								<a class="menu_link" href="meus_times.php">
+								<a class="menu_link" href="">
 									<i class="menu_icon fas fa-users"></i>
 									Meus times
 								</a>
@@ -87,7 +87,7 @@
 
 						@case('administrador_time')
 							<li class="menu_item">
-								<a class="menu_link" href="meu_time.php">
+								<a class="menu_link" href="{{route('meu_time')}}">
 									<i class="menu_icon fas fa-users"></i>
 									Meu time
 								</a>

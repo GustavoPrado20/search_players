@@ -13,6 +13,7 @@ class times extends Model
         'nome',
         'brasao',
         'lema',
+        'id_dono',
         'esporte',
         'pontos',
     ];
