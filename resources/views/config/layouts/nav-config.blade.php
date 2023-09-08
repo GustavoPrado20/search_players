@@ -11,7 +11,7 @@
 		</li>
 		@if(!empty($time))
 			<li  class="menu_config_item">
-				<h5><a href="config_time.php" class="text_menu_config">Time</a></h5>
+				<h5><a href="{{route('config_time')}}" class="text_menu_config">Time</a></h5>
 			</li>
 		@endif
 	</ul>

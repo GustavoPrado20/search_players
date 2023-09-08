@@ -121,33 +121,33 @@
                                         Estado
                                     </label>
                                     <select class="form-control" id="uf" name="uf">
-                                        <option value="AC" @if($endereco['estado']=="AC") selected @endif>Acre</option>
-                                        <option value="AL" @if($endereco['estado']=="AL") selected @endif>Alagoas</option>
-                                        <option value="AP" @if($endereco['estado']=="AP") selected @endif>Amapá</option>
-                                        <option value="AM" @if($endereco['estado']=="AM") selected @endif>Amazonas</option>
-                                        <option value="BA" @if($endereco['estado']=="BA") selected @endif>Bahia</option>
-                                        <option value="CE" @if($endereco['estado']=="CE") selected @endif>Ceará</option>
-                                        <option value="DF" @if($endereco['estado']=="DF") selected @endif>Distrito Federal</option>
-                                        <option value="ES" @if($endereco['estado']=="ES") selected @endif>Espírito Santo</option>
-                                        <option value="GO" @if($endereco['estado']=="GO") selected @endif>Goiás</option>
-                                        <option value="MA" @if($endereco['estado']=="MA") selected @endif>Maranhão</option>
-                                        <option value="MT" @if($endereco['estado']=="MT") selected @endif>Mato Grosso</option>
-                                        <option value="MS" @if($endereco['estado']=="MS") selected @endif>Mato Grosso do Sul</option>
-                                        <option value="MG" @if($endereco['estado']=="MG") selected @endif>Minas Gerais</option>
-                                        <option value="PA" @if($endereco['estado']=="PA") selected @endif>Pará</option>
-                                        <option value="PB" @if($endereco['estado']=="PB") selected @endif>Paraíba</option>
-                                        <option value="PR" @if($endereco['estado']=="PR") selected @endif>Paraná</option>
-                                        <option value="PE" @if($endereco['estado']=="PE") selected @endif>Pernambuco</option>
-                                        <option value="PI" @if($endereco['estado']=="PI") selected @endif>Piauí</option>
-                                        <option value="RJ" @if($endereco['estado']=="RJ") selected @endif>Rio de Janeiro</option>
-                                        <option value="RN" @if($endereco['estado']=="RN") selected @endif>Rio Grande do Norte</option>
-                                        <option value="RS" @if($endereco['estado']=="RS") selected @endif>Rio Grande do Sul</option>
-                                        <option value="RO" @if($endereco['estado']=="RO") selected @endif>Rondônia</option>
-                                        <option value="RR" @if($endereco['estado']=="RR") selected @endif>Roraima</option>
-                                        <option value="SC" @if($endereco['estado']=="SC") selected @endif>Santa Catarina</option>
-                                        <option value="SP" @if($endereco['estado']=="SP") selected @endif>São Paulo</option>
-                                        <option value="SE" @if($endereco['estado']=="SE") selected @endif>Sergipe</option>
-                                        <option value="TO" @if($endereco['estado']=="TO") selected @endif>Tocantins</option>
+                                        <option value="AC" @if(!empty($endereco) && $endereco['estado']=="AC") selected @endif>Acre</option>
+                                        <option value="AL" @if(!empty($endereco) && $endereco['estado']=="AL") selected @endif>Alagoas</option>
+                                        <option value="AP" @if(!empty($endereco) && $endereco['estado']=="AP") selected @endif>Amapá</option>
+                                        <option value="AM" @if(!empty($endereco) && $endereco['estado']=="AM") selected @endif>Amazonas</option>
+                                        <option value="BA" @if(!empty($endereco) && $endereco['estado']=="BA") selected @endif>Bahia</option>
+                                        <option value="CE" @if(!empty($endereco) && $endereco['estado']=="CE") selected @endif>Ceará</option>
+                                        <option value="DF" @if(!empty($endereco) && $endereco['estado']=="DF") selected @endif>Distrito Federal</option>
+                                        <option value="ES" @if(!empty($endereco) && $endereco['estado']=="ES") selected @endif>Espírito Santo</option>
+                                        <option value="GO" @if(!empty($endereco) && $endereco['estado']=="GO") selected @endif>Goiás</option>
+                                        <option value="MA" @if(!empty($endereco) && $endereco['estado']=="MA") selected @endif>Maranhão</option>
+                                        <option value="MT" @if(!empty($endereco) && $endereco['estado']=="MT") selected @endif>Mato Grosso</option>
+                                        <option value="MS" @if(!empty($endereco) && $endereco['estado']=="MS") selected @endif>Mato Grosso do Sul</option>
+                                        <option value="MG" @if(!empty($endereco) && $endereco['estado']=="MG") selected @endif>Minas Gerais</option>
+                                        <option value="PA" @if(!empty($endereco) && $endereco['estado']=="PA") selected @endif>Pará</option>
+                                        <option value="PB" @if(!empty($endereco) && $endereco['estado']=="PB") selected @endif>Paraíba</option>
+                                        <option value="PR" @if(!empty($endereco) && $endereco['estado']=="PR") selected @endif>Paraná</option>
+                                        <option value="PE" @if(!empty($endereco) && $endereco['estado']=="PE") selected @endif>Pernambuco</option>
+                                        <option value="PI" @if(!empty($endereco) && $endereco['estado']=="PI") selected @endif>Piauí</option>
+                                        <option value="RJ" @if(!empty($endereco) && $endereco['estado']=="RJ") selected @endif>Rio de Janeiro</option>
+                                        <option value="RN" @if(!empty($endereco) && $endereco['estado']=="RN") selected @endif>Rio Grande do Norte</option>
+                                        <option value="RS" @if(!empty($endereco) && $endereco['estado']=="RS") selected @endif>Rio Grande do Sul</option>
+                                        <option value="RO" @if(!empty($endereco) && $endereco['estado']=="RO") selected @endif>Rondônia</option>
+                                        <option value="RR" @if(!empty($endereco) && $endereco['estado']=="RR") selected @endif>Roraima</option>
+                                        <option value="SC" @if(!empty($endereco) && $endereco['estado']=="SC") selected @endif>Santa Catarina</option>
+                                        <option value="SP" @if(!empty($endereco) && $endereco['estado']=="SP") selected @endif>São Paulo</option>
+                                        <option value="SE" @if(!empty($endereco) && $endereco['estado']=="SE") selected @endif>Sergipe</option>
+                                        <option value="TO" @if(!empty($endereco) && $endereco['estado']=="TO") selected @endif>Tocantins</option>
                                     </select>
                                 </section>
                             </section>
@@ -178,14 +178,14 @@
                                     <label for="numero">
                                         Nº							    
                                     </label>
-                                    <input class="form-control" name="numero" type="text" id="numero" placeholder="Numero" size="40" value="@if(isset($endereco['numero'])) {{$endereco['numero']}} @endif">
+                                    <input class="form-control" name="numero" type="text" id="numero" placeholder="Numero" size="40" value="@if(isset($endereco['numero'])) {{$endereco['numero']}} @endif" autocomplete = "no">
                                 </section>
                             </section>
 
                             <button class="btn btn-light" type="button" name="salvar" data-toggle="modal" data-target="#alterar_usuario">
                                 Salvar Alterações
                             </button>
-                            <a href="meu_time.php">
+                            <a href="{{route('meu_time')}}">
                                 <button class="btn btn-danger" type="button">Cancelar</button> 
                             </a>
 
@@ -250,7 +250,7 @@
                             <h5 class="modal-title" id="exampleModalLabel">Alterações Completas</h5>
                         </div>							     
                         <div class="modal-footer">
-                            <a href="meu_time.php">
+                            <a href="{{route('meu_time')}}">
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#completa">OK</button>
                             </a>
                         </div>
