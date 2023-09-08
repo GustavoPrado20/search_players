@@ -18,7 +18,7 @@
                 <h5 class = "titulo">
                     {{$dadosTime['nome']}}
 
-                    <a class = "icon" href = "config_time.php">
+                    <a class = "icon" href = "{{route('config_time')}}">
                         <i class="fas fa-pencil-alt"></i>
                     </a>
                 </h5>

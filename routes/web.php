@@ -53,6 +53,8 @@ Route::prefix('/configuração')->group(function(){
     Route::post('/conta/delete/conta', [Controllers\ConfiguracaoContaController::class, 'deleteConta'])->name('config_delete_conta_confirm');
 
     Route::get('/localização', [Controllers\ConfiguracaoLocalizacaoController::class, 'index'])->name('config_localizacao');
+
+    Route::get('/time', [Controllers\ConfiguracaoTimeController::class, 'index'])->name('config_time');
 });
 
 Route::prefix('/times')->group(function(){
@@ -63,7 +65,6 @@ Route::prefix('/times')->group(function(){
 
 
 /*
-Route::get('/time', [Controllers\ConfiguracaoController::class, 'config_time'])->name('config_time');
 
 Route::get('/times', [Controllers\TimeController::class, ''])->name('times');
 
