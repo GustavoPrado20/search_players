@@ -18,7 +18,7 @@ A versão original do projeto "Search Players" incluía as seguintes funcionalid
     <li><b>Cadastro de Jogadores:</b> Os jogadores podiam criar perfis, fornecendo informações como nome, idade, habilidades e preferências de jogo.</li>
     <li><b>Busca de Jogadores:</b> As equipes ou recrutadores podiam pesquisar jogadores com base em filtros como habilidades, região, disponibilidade e mais.</li>
     <li><b>Avaliação de Jogadores:</b> As equipes podiam avaliar e deixar comentários nos perfis dos jogadores.</li>
-    <li><b>Sistema de Mensagens:</b> Os usuários podiam se comunicar por meio de um sistema de mensagens interno.<li>
+    <li><b>Sistema de Mensagens:</b> Os usuários podiam se comunicar por meio de um sistema de mensagens interno.</li>
 </ul>
 
 ### Refatoração em Andamento
