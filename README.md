@@ -1,66 +1,56 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Search Players - Projeto de TCC (2020) [Refatoração em Andamento com Laravel]
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Visão Geral
 
-## About Laravel
+Este é o README do projeto de Trabalho de Conclusão de Curso (TCC) desenvolvido em 2020, intitulado "Search Players". O projeto consiste em uma aplicação web para busca de jogadores, criada com base em tecnologias tradicionais como PHP, HTML, CSS, Bootstrap, MySQL e JavaScript. Atualmente, o projeto está em processo de refatoração, com a transição para o framework Laravel, mantendo o nome "Search Players". Este documento fornece informações sobre o projeto, tecnologias envolvidas e instruções para executá-lo localmente.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Status do Projeto
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+A versão original do projeto "Search Players" foi desenvolvida em 2020 usando PHP, HTML, CSS, Bootstrap, MySQL e JavaScript. Atualmente, o projeto está em processo de refatoração para o framework Laravel. A refatoração tem como objetivo melhorar a escalabilidade, segurança e a funcionalidade geral do projeto.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Funcionalidades
 
-## Learning Laravel
+### Versão Original (2020)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+A versão original do projeto "Search Players" incluía as seguintes funcionalidades:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+<ul>
+    <li><b>Cadastro de Jogadores:</b> Os jogadores podiam criar perfis, fornecendo informações como nome, idade, habilidades e preferências de jogo.</li>
+    <li><b>Busca de Jogadores:</b> As equipes ou recrutadores podiam pesquisar jogadores com base em filtros como habilidades, região, disponibilidade e mais.</li>
+    <li><b>Avaliação de Jogadores:</b> As equipes podiam avaliar e deixar comentários nos perfis dos jogadores.</li>
+    <li><b>Sistema de Mensagens:</b> Os usuários podiam se comunicar por meio de um sistema de mensagens interno.<li>
+</ul>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Refatoração em Andamento
 
-## Laravel Sponsors
+A refatoração do projeto "Search Players" com Laravel visa aprimorar as funcionalidades existentes e adicionar novos recursos, incluindo:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+<ul>
+    <li><b>Autenticação de Usuários:</b> Sistema de autenticação seguro para jogadores e recrutadores.</li>
+    <li><b>Melhorias no Sistema de Mensagens:</b> Aprimoramentos no sistema de mensagens para facilitar a comunicação entre jogadores e recrutadores.</li>
+    <li><b>Melhorias no Desempenho:</b> Otimização da performance do sistema para proporcionar uma experiência mais ágil aos usuários.</li>
+    <li><b>Personalização de Perfil:</b> A possibilidade de personalizar o perfil de um jogador com imagens, descrições e informações adicionais.</li>
+    <li><b>Administração de Conteúdo:</b> Uma interface de administração para gerenciar usuários, jogadores e conteúdo do site.</li>
+    <li><b>Recrutamento de Equipes:</b> Uma funcionalidade de recrutamento para equipes em busca de jogadores.</li>
+</ul>
 
-### Premium Partners
+## Tecnologias Utilizadas
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+As tecnologias utilizadas na refatoração do projeto "Search Players" incluem:
 
-## Contributing
+Laravel: Framework PHP para desenvolvimento web ágil.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+HTML: Estruturação da página.
 
-## Code of Conduct
+CSS: Estilização da interface do usuário.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Bootstrap: Framework de front-end para criar interfaces responsivas e atraentes.
 
-## Security Vulnerabilities
+JavaScript: Implementação de lógica interativa no front-end.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+MySQL: Banco de dados para armazenar informações de jogadores e usuários.
 
-## License
+## Considerações Finais
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+O projeto "Search Players" representa um esforço contínuo para criar uma plataforma de busca de jogadores eficiente e amigável para a comunidade de esportes eletrônicos e jogos em equipe. Estamos ansiosos para ver as melhorias que a refatoração em Laravel trará e como isso beneficiará os jogadores e recrutadores. Se você deseja contribuir ou tiver alguma sugestão, sinta-se à vontade para entrar em contato com a equipe de desenvolvimento.
+
